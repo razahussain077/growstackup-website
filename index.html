@@ -4,474 +4,378 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b5cff">
-  <meta name="description" content="A focused freight billing audit for brokers, 3PLs and carriers. Find invoice mismatches, accessorial errors and missing documentation before they turn into lost revenue.">
+  <meta name="description" content="GrowStackUp builds AI employees for sales, operations, finance, documents, support and more — each with a defined job, personality and workflow.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b5cff'/%3E%3Cpath d='M45 16c-6-4-13-6-21-6-9 0-15 4-15 10 0 6 5 8 14 11l7 2c5 1 7 3 7 6 0 4-4 7-10 7-7 0-13-2-18-7l-4 8c6 5 14 7 23 7 11 0 18-5 18-13 0-6-5-9-14-12l-7-2c-4-1-6-2-6-4 0-3 4-5 9-5 5 0 10 2 14 5l3-7Z' fill='white'/%3E%3C/svg%3E">
-  <title>GrowStackUp | Freight Billing Audit</title>
+  <title>GrowStackUp | AI Employees for Real Business Work</title>
   <style>
     :root{
       --navy:#071529;
-      --navy-2:#0b1e39;
+      --navy2:#0c2343;
       --blue:#0b5cff;
-      --blue-2:#0849c9;
-      --blue-soft:#eef4ff;
+      --blue2:#0849c9;
+      --blueSoft:#eef4ff;
       --ink:#101828;
       --muted:#667085;
       --line:#e4e9f0;
-      --surface:#ffffff;
       --bg:#f7f9fc;
+      --surface:#fff;
       --green:#0c7a5a;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      color:var(--ink);
-      background:var(--surface);
+      margin:0;color:var(--ink);background:var(--surface);
       font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      -webkit-font-smoothing:antialiased;
+      -webkit-font-smoothing:antialiased
     }
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
+    a{color:inherit;text-decoration:none} button{font:inherit}
     .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
-    .nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(228,233,240,.85);
-    }
-    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(228,233,240,.85)}
+    .navInner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.035em}
-    .mark{
-      width:34px;height:34px;border-radius:10px;background:var(--blue);
-      display:grid;place-items:center;color:#fff;font-size:20px;font-weight:900
-    }
-    .brand-name{font-size:17px}.brand-meta{display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#98a2b3;font-weight:700;margin-top:2px}
-    .nav-links{display:flex;align-items:center;gap:28px;color:#475467;font-size:13px;font-weight:600}
-    .nav-links a:hover{color:var(--ink)}
-    .nav-cta{display:flex;align-items:center;gap:9px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      border-radius:10px;padding:11px 16px;border:1px solid var(--line);
-      font-size:12px;font-weight:750;transition:.18s ease
-    }
+    .mark{width:34px;height:34px;border-radius:10px;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900}
+    .brandName{font-size:17px}.brandMeta{display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#98a2b3;font-weight:700;margin-top:2px}
+    .navLinks{display:flex;align-items:center;gap:28px;color:#475467;font-size:13px;font-weight:600}
+    .navLinks a:hover{color:var(--ink)}
+    .navCta{display:flex;gap:9px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;padding:12px 16px;border:1px solid var(--line);font-size:12px;font-weight:800;transition:.18s ease;cursor:pointer}
     .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(11,92,255,.18)}
-    .btn-primary:hover{background:var(--blue-2);border-color:var(--blue-2)}
-    .btn-secondary{background:#fff;color:#344054}
-    .btn-secondary:hover{border-color:#c7d2e2}
+    .primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(11,92,255,.18)}
+    .primary:hover{background:var(--blue2);border-color:var(--blue2)}
+    .secondary{background:#fff;color:#344054}
+    .secondary:hover{border-color:#c7d2e2}
     .hero{
+      color:#fff;overflow:hidden;
       background:
-        radial-gradient(circle at 76% 26%,rgba(38,122,255,.18),transparent 28%),
-        linear-gradient(135deg,var(--navy) 0%,#0c2343 100%);
-      color:#fff;overflow:hidden
+        radial-gradient(circle at 78% 18%,rgba(38,122,255,.22),transparent 27%),
+        radial-gradient(circle at 85% 80%,rgba(0,200,255,.08),transparent 22%),
+        linear-gradient(135deg,var(--navy),var(--navy2))
     }
-    .hero-inner{padding:88px 0 86px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:70px;align-items:center}
-    .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#8db5ff}
-    h1{font-size:clamp(42px,5vw,68px);line-height:1.02;letter-spacing:-.055em;margin:14px 0 20px;max-width:720px}
-    .hero-copy{font-size:18px;line-height:1.6;color:#c3d0e1;max-width:640px;margin:0}
-    .hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
-    .hero .btn-secondary{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff}
-    .hero .btn-secondary:hover{background:rgba(255,255,255,.1)}
-    .hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px;color:#96aac5;font-size:11px}
-    .hero-note span{display:inline-flex;align-items:center;gap:7px}
-    .dot{width:6px;height:6px;background:#6ed7b0;border-radius:50%;box-shadow:0 0 0 4px rgba(110,215,176,.1)}
-    .audit-preview{
-      background:#fff;color:var(--ink);border:1px solid rgba(255,255,255,.2);
-      border-radius:16px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.26)
+    .heroInner{padding:92px 0 86px;display:grid;grid-template-columns:minmax(0,1fr) minmax(390px,.8fr);gap:64px;align-items:center}
+    .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#8db5ff}
+    h1{font-size:clamp(44px,5.4vw,72px);line-height:.99;letter-spacing:-.06em;margin:15px 0 22px;max-width:760px}
+    .heroCopy{font-size:18px;line-height:1.62;color:#c6d3e3;max-width:680px;margin:0}
+    .heroActions{display:flex;gap:11px;flex-wrap:wrap;margin-top:31px}
+    .hero .secondary{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff}
+    .hero .secondary:hover{background:rgba(255,255,255,.1)}
+    .heroNote{display:flex;gap:20px;flex-wrap:wrap;margin-top:25px;color:#96aac5;font-size:11px}
+    .heroNote span{display:inline-flex;align-items:center;gap:7px}
+    .dot{width:6px;height:6px;border-radius:50%;background:#72d7ae;box-shadow:0 0 0 4px rgba(114,215,174,.1)}
+    .teamBoard{background:#fff;color:var(--ink);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:14px;box-shadow:0 28px 70px rgba(0,0,0,.28)}
+    .boardTop{display:flex;align-items:center;justify-content:space-between;padding:7px 8px 13px}
+    .boardTitle{font-size:11px;font-weight:850;letter-spacing:.04em}.boardStatus{font-size:9px;font-weight:850;color:var(--green);background:#ecfdf3;padding:5px 8px;border-radius:999px}
+    .boardGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .miniAgent{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfe}
+    .miniTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
+    .avatar{width:29px;height:29px;border-radius:9px;background:var(--blueSoft);color:var(--blue);display:grid;place-items:center;font-size:10px;font-weight:900}
+    .miniAgent strong{font-size:10px}.miniAgent span{display:block;color:#98a2b3;font-size:8px;margin-top:2px}
+    .miniState{margin-top:9px;font-size:8px;color:#667085;line-height:1.4}
+    .boardFoot{border-top:1px solid var(--line);margin-top:11px;padding:11px 8px 1px;color:#667085;font-size:9px;line-height:1.5}
+    .strip{border-bottom:1px solid var(--line);background:#fff}
+    .stripInner{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stripItem{padding:18px 22px;border-right:1px solid var(--line)}
+    .stripItem:last-child{border-right:0}
+    .stripKicker{display:block;color:#98a2b3;font-size:8px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    .stripValue{display:block;margin-top:7px;font-size:13px;font-weight:850;letter-spacing:-.02em}.stripSub{display:block;margin-top:3px;color:#667085;font-size:10px}
+    .section{padding:88px 0}.soft{background:var(--bg)}
+    .label{color:var(--blue);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}
+    h2{font-size:clamp(33px,4vw,50px);line-height:1.06;letter-spacing:-.05em;margin:10px 0 15px;max-width:790px}
+    .lead{font-size:16px;line-height:1.65;color:var(--muted);margin:0;max-width:760px}
+    .agentsHead{display:flex;justify-content:space-between;gap:30px;align-items:end}
+    .agentsIntro{max-width:790px}.agentsNote{font-size:10px;color:#98a2b3;max-width:200px;line-height:1.5;text-align:right}
+    .agents{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:40px}
+    .agentCard{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;min-height:235px;box-shadow:0 5px 20px rgba(16,24,40,.035);display:flex;flex-direction:column}
+    .agentCard:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(16,24,40,.07)}
+    .agentHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .agentAvatar{width:44px;height:44px;border-radius:13px;background:var(--blueSoft);color:var(--blue);display:grid;place-items:center;font-size:14px;font-weight:900;flex:none}
+    .agentRole{font-size:8px;letter-spacing:.11em;text-transform:uppercase;color:#98a2b3;font-weight:900;text-align:right}
+    .agentCard h3{font-size:19px;letter-spacing:-.03em;margin:16px 0 4px}.agentCard .personality{font-size:10px;color:var(--blue);font-weight:800}
+    .agentCard p{font-size:11px;line-height:1.6;color:var(--muted);margin:10px 0 0}
+    .agentFoot{margin-top:auto;padding-top:16px;display:flex;gap:6px;flex-wrap:wrap}
+    .tag{font-size:8px;font-weight:800;color:#475467;background:#f5f7fa;border:1px solid #ebeff4;border-radius:999px;padding:5px 7px}
+    .quote{margin-top:11px;padding:11px 12px;border-radius:10px;background:#f8fafc;border:1px solid #edf1f5;color:#667085;font-size:9px;line-height:1.45}
+    .quote strong{color:#344054}
+    .workflow{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:54px;align-items:start;margin-top:40px}
+    .workflowCopy{position:sticky;top:106px}
+    .workflowList{display:grid;gap:10px}
+    .flowItem{display:grid;grid-template-columns:36px 1fr auto;gap:13px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 15px}
+    .flowNum{width:30px;height:30px;border-radius:9px;background:var(--blueSoft);color:var(--blue);display:grid;place-items:center;font-size:9px;font-weight:900}
+    .flowItem h3{margin:0;font-size:12px;letter-spacing:-.01em}.flowItem p{margin:4px 0 0;color:#667085;font-size:9px;line-height:1.45}
+    .arrow{color:#98a2b3;font-size:13px}
+    .sectionCta{margin-top:31px}
+    .proofPanel{background:var(--navy);border-radius:18px;color:#fff;padding:34px}
+    .proofPanel h3{font-size:28px;line-height:1.13;letter-spacing:-.04em;margin:10px 0 13px;max-width:620px}
+    .proofPanel p{margin:0;color:#b9c8da;font-size:13px;line-height:1.6;max-width:640px}
+    .proofGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+    .proofBox{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:11px;padding:16px}
+    .proofBox strong{display:block;font-size:12px}.proofBox span{display:block;color:#96aac5;font-size:9px;line-height:1.45;margin-top:5px}
+    .cta{padding:88px 0}.ctaPanel{display:grid;grid-template-columns:1fr .84fr;gap:35px;background:#f4f7fb;border:1px solid var(--line);border-radius:18px;padding:35px;align-items:start}
+    .ctaPanel h2{margin-top:9px}.ctaPanel p{font-size:13px;line-height:1.6;color:var(--muted);max-width:600px}
+    .formCard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px}
+    .formCard h3{font-size:17px;margin:0}.formCard p{font-size:10px;color:#667085;margin:5px 0 0}
+    form{margin-top:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    label{display:grid;gap:6px;color:#667085;font-size:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:850}
+    input,select,textarea{width:100%;padding:11px 12px;border:1px solid #d8e0ea;border-radius:9px;background:#fff;color:var(--ink);font:inherit;font-size:11px;letter-spacing:normal;text-transform:none;outline:none}
+    textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}
+    input:focus,select:focus,textarea:focus{border-color:#8db5ff;box-shadow:0 0 0 3px rgba(11,92,255,.08)}
+    .formBottom{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:14px}
+    .formNote{font-size:8px;line-height:1.45;color:#98a2b3;max-width:220px}
+    .faqGrid{display:grid;grid-template-columns:1fr 1fr;gap:0 42px;margin-top:34px}
+    .faqItem{padding:19px 0;border-top:1px solid var(--line)}.faqItem h3{font-size:13px;margin:0 0 8px}.faqItem p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
+    .bottom{background:var(--blue);color:#fff;padding:70px 0}.bottomInner{display:flex;justify-content:space-between;gap:25px;align-items:end}.bottom h2{margin:0;max-width:760px}.bottom p{margin:12px 0 0;color:#dbe8ff;font-size:13px;line-height:1.5;max-width:650px}
+    .footer{background:var(--navy);color:#a9b8ca;border-top:1px solid rgba(255,255,255,.07)}.footerInner{padding:27px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px}.footerBrand{color:#fff;font-weight:850}.footerNote{color:#7f92a8}
+    .srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:980px){
+      .navLinks{display:none}.heroInner{grid-template-columns:1fr;gap:42px;padding:70px 0}.teamBoard{max-width:700px}
+      .agents{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:1fr}.workflowCopy{position:static}
+      .ctaPanel{grid-template-columns:1fr}.agentsHead{align-items:start}.agentsNote{text-align:left;max-width:none}
     }
-    .preview-top{display:flex;align-items:center;justify-content:space-between;padding:8px 8px 14px}
-    .preview-title{font-size:11px;font-weight:800;letter-spacing:.04em}
-    .preview-badge{font-size:9px;font-weight:800;color:var(--blue);background:var(--blue-soft);padding:5px 8px;border-radius:999px}
-    .preview-card{border:1px solid var(--line);border-radius:11px;overflow:hidden}
-    .preview-head,.preview-row{display:grid;grid-template-columns:1.3fr .9fr .8fr .75fr;gap:10px;align-items:center}
-    .preview-head{padding:10px 12px;background:#f8fafc;color:#98a2b3;font-size:8px;text-transform:uppercase;letter-spacing:.1em;font-weight:800}
-    .preview-row{padding:13px 12px;border-top:1px solid #edf1f5;font-size:10px}
-    .preview-row strong{font-size:10px}.mono{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
-    .flag{display:inline-flex;align-items:center;justify-content:center;padding:4px 7px;border-radius:999px;font-size:8px;font-weight:800}
-    .flag-blue{background:#edf4ff;color:#165dcc}.flag-amber{background:#fff6e6;color:#9a6700}.flag-green{background:#ecfdf3;color:#067647}
-    .preview-foot{padding:12px;border-top:1px solid var(--line);background:#fbfcfe;color:#667085;font-size:9px;line-height:1.55}
-    .proof{background:#fff;border-bottom:1px solid var(--line)}
-    .proof-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-    .proof-item{padding:20px 22px;border-right:1px solid var(--line)}
-    .proof-item:last-child{border-right:0}
-    .proof-kicker{display:block;color:#98a2b3;font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-    .proof-value{display:block;margin-top:7px;font-weight:800;font-size:13px;letter-spacing:-.01em}
-    .proof-sub{display:block;margin-top:3px;color:#667085;font-size:10px}
-    .section{padding:88px 0}
-    .section-soft{background:var(--bg)}
-    .section-intro{max-width:720px}
-    .section-label{color:var(--blue);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:850}
-    h2{font-size:clamp(32px,4vw,48px);line-height:1.08;letter-spacing:-.045em;margin:10px 0 15px}
-    .lead{font-size:16px;line-height:1.65;color:var(--muted);margin:0}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
-    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px;box-shadow:0 5px 20px rgba(16,24,40,.035)}
-    .number{font-size:10px;color:var(--blue);font-weight:850;letter-spacing:.1em}
-    .card h3{font-size:17px;letter-spacing:-.02em;margin:10px 0 8px}
-    .card p{font-size:12px;line-height:1.6;color:var(--muted);margin:0}
-    .checks{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
-    .check-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:25px}
-    .check-card h3{margin:0 0 8px;font-size:15px}
-    .check-list{display:grid;gap:0;margin-top:16px}
-    .check{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-top:1px solid #eef2f6;font-size:11px;color:#475467}
-    .check:first-child{border-top:0}
-    .check-icon{flex:none;width:18px;height:18px;border-radius:6px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-size:11px;font-weight:900}
-    .audit-section{padding:92px 0;background:#f4f7fb}
-    .audit-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr);gap:18px;align-items:stretch;margin-top:38px}
-    .audit-copy-card{background:var(--navy);color:#fff;border-radius:16px;padding:34px;position:relative;overflow:hidden}
-    .audit-copy-card:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid rgba(141,181,255,.2);right:-120px;bottom:-120px}
-    .audit-copy-card h3{font-size:26px;line-height:1.15;letter-spacing:-.035em;margin:10px 0 12px;max-width:420px}
-    .audit-copy-card p{color:#b9c8da;font-size:13px;line-height:1.65;max-width:430px;margin:0}
-    .audit-list{margin-top:24px;display:grid;gap:10px}
-    .audit-list div{display:flex;gap:10px;align-items:center;color:#d9e3ef;font-size:11px}
-    .audit-list i{width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.09);color:#83b1ff;font-style:normal;font-weight:900}
-    .audit-form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}
-    .audit-form-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
-    .audit-form-top h3{margin:0;font-size:21px;letter-spacing:-.025em}
-    .audit-form-top p{margin:5px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
-    .free-chip{background:#ecfdf3;color:#067647;border-radius:999px;padding:6px 9px;font-size:8px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-    label{display:grid;gap:6px;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#667085;font-weight:800}
-    input,textarea,select{
-      width:100%;border:1px solid #d8e0ea;border-radius:9px;background:#fff;color:var(--ink);
-      padding:11px 12px;font-size:12px;outline:none;transition:.15s ease
-    }
-    textarea{min-height:96px;resize:vertical}
-    input:focus,textarea:focus,select:focus{border-color:#8db5ff;box-shadow:0 0 0 3px rgba(11,92,255,.08)}
-    .full{grid-column:1/-1}
-    .form-actions{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-top:18px}
-    .form-disclaimer{font-size:9px;color:#98a2b3;line-height:1.45;max-width:300px}
-    .form-button{border:0;cursor:pointer}
-    .form-note{
-      margin-top:13px;padding:10px 12px;border-radius:9px;background:#f8fafc;border:1px solid #edf1f5;
-      color:#667085;font-size:9px;line-height:1.5
-    }
-    .form-note strong{color:#344054}
-    .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 42px;margin-top:34px}
-    .faq-item{padding:19px 0;border-top:1px solid var(--line)}
-    .faq-item h3{font-size:13px;letter-spacing:-.01em;margin:0 0 8px}
-    .faq-item p{font-size:11px;line-height:1.65;color:var(--muted);margin:0}
-    .bottom-cta{background:var(--blue);color:#fff;padding:70px 0}
-    .bottom-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .bottom-cta h2{margin:0;max-width:650px}
-    .bottom-cta p{color:#dbe8ff;font-size:13px;line-height:1.55;margin:12px 0 0;max-width:650px}
-    .footer{background:#071529;color:#a9b8ca;border-top:1px solid rgba(255,255,255,.07)}
-    .footer-inner{padding:28px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px}
-    .footer-brand{color:#fff;font-weight:800}
-    .footer-note{color:#7f92a8}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .hero-inner{grid-template-columns:1fr;gap:42px;padding:68px 0}
-      .audit-preview{max-width:680px}
-      .proof-inner{grid-template-columns:1fr 1fr}
-      .proof-item:nth-child(2){border-right:0}
-      .proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .grid-3,.audit-layout{grid-template-columns:1fr}
-      .checks,.faq{grid-template-columns:1fr}
-      .bottom-cta-inner{flex-direction:column;align-items:flex-start}
-    }
-    @media(max-width:620px){
-      .container{width:min(100% - 28px,1160px)}
-      .nav-inner{height:66px}
-      .brand-meta{display:none}
-      .nav-cta .btn-secondary{display:none}
-      .hero-inner{padding:55px 0 58px}
-      h1{font-size:42px}
-      .hero-copy{font-size:15px}
-      .hero-actions{flex-direction:column}
-      .hero-actions .btn{width:100%}
-      .proof-inner{grid-template-columns:1fr}
-      .proof-item{border-right:0!important;border-bottom:1px solid var(--line)}
-      .proof-item:last-child{border-bottom:0}
-      .section,.audit-section{padding:68px 0}
-      .audit-form-card,.audit-copy-card{padding:22px}
-      .form-grid{grid-template-columns:1fr}
-      .full{grid-column:auto}
-      .form-actions{flex-direction:column;align-items:stretch}
-      .form-disclaimer{max-width:none}
-      .form-actions .btn{width:100%}
-      .footer-inner{flex-direction:column;align-items:flex-start}
+    @media(max-width:650px){
+      .container{width:min(100% - 28px,1160px)}.navInner{height:66px}.brandMeta,.navCta .secondary{display:none}
+      h1{font-size:43px}.heroCopy{font-size:15px}.heroActions{flex-direction:column}.heroActions .btn{width:100%}
+      .stripInner{grid-template-columns:1fr 1fr}.stripItem:nth-child(2){border-right:0}.stripItem:nth-child(-n+2){border-bottom:1px solid var(--line)}.stripItem:nth-child(4){border-right:0}
+      .boardGrid{grid-template-columns:1fr 1fr}.agents{grid-template-columns:1fr}.section,.cta{padding:68px 0}
+      .proofGrid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.full{grid-column:auto}.formBottom{flex-direction:column;align-items:stretch}.formNote{max-width:none}
+      .faqGrid{grid-template-columns:1fr}.bottomInner{flex-direction:column;align-items:flex-start}.footerInner{flex-direction:column;align-items:flex-start}
     }
   </style>
 </head>
 <body>
   <header class="nav">
-    <div class="container nav-inner">
+    <div class="container navInner">
       <a class="brand" href="#">
         <span class="mark">G</span>
-        <span>
-          <span class="brand-name">GrowStackUp</span>
-          <span class="brand-meta">Freight Operations</span>
-        </span>
+        <span><span class="brandName">GrowStackUp</span><span class="brandMeta">AI workforce for business</span></span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#audit">Free audit</a>
-        <a href="#checks">What we check</a>
-        <a href="#process">Process</a>
-        <a href="#faq">FAQ</a>
+      <nav class="navLinks" aria-label="Primary">
+        <a href="#agents">The team</a>
+        <a href="#workflow">How they work</a>
+        <a href="#built">Built around your business</a>
+        <a href="#contact">Talk to us</a>
       </nav>
-      <div class="nav-cta">
-        <a class="btn btn-secondary" href="https://calendly.com/growstackup/15min" target="_blank" rel="noopener">Book a call</a>
-        <a class="btn btn-primary" href="#audit">Get free audit</a>
+      <div class="navCta">
+        <a class="btn secondary" href="#agents">Meet the team</a>
+        <a class="btn primary" href="#contact">Build my workforce →</a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-inner">
+      <div class="container heroInner">
         <div>
-          <div class="eyebrow">Freight billing audit</div>
-          <h1>Find the freight billing errors hiding in your workflow.</h1>
-          <p class="hero-copy">Send us a small sample of recent freight invoices. We check the billing, rate and supporting paperwork for issues worth a closer look — then give you a clear exception report.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#audit">Request the free audit <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#process">See the process</a>
+          <div class="eyebrow">A different kind of team</div>
+          <h1>Give every repetitive job its own employee.</h1>
+          <p class="heroCopy">GrowStackUp builds specialized AI employees for the work your business repeats every day — sales development, research, follow-up, documents, finance, operations, support and voice.</p>
+          <div class="heroActions">
+            <a class="btn primary" href="#contact">Build your AI workforce <span>→</span></a>
+            <a class="btn secondary" href="#agents">Meet the 8 employees</a>
           </div>
-          <div class="hero-note" aria-label="Service details">
-            <span><i class="dot"></i>No TMS replacement</span>
-            <span><i class="dot"></i>Small sample first</span>
-            <span><i class="dot"></i>No long-term commitment</span>
+          <div class="heroNote">
+            <span><i class="dot"></i>One employee. One clear job.</span>
+            <span><i class="dot"></i>Defined workflow + personality.</span>
+            <span><i class="dot"></i>Human oversight where it matters.</span>
           </div>
         </div>
 
-        <div class="audit-preview" aria-label="Illustrative audit report">
-          <div class="preview-top">
-            <div class="preview-title">Illustrative exception report</div>
-            <div class="preview-badge">Sample only</div>
+        <div class="teamBoard" aria-label="Example AI team dashboard">
+          <div class="boardTop"><div class="boardTitle">GrowStackUp / Your AI team</div><div class="boardStatus">8 roles defined</div></div>
+          <div class="boardGrid">
+            <div class="miniAgent"><div class="miniTop"><div><strong>Scout</strong><span>SDR</span></div><div class="avatar">SC</div></div><div class="miniState">Researching accounts → drafting outreach</div></div>
+            <div class="miniAgent"><div class="miniTop"><div><strong>Trace</strong><span>Documents</span></div><div class="avatar">TR</div></div><div class="miniState">Reading files → checking required fields</div></div>
+            <div class="miniAgent"><div class="miniTop"><div><strong>Ledger</strong><span>Finance</span></div><div class="avatar">LE</div></div><div class="miniState">Matching invoices → flagging exceptions</div></div>
+            <div class="miniAgent"><div class="miniTop"><div><strong>Voice</strong><span>Calls</span></div><div class="avatar">VO</div></div><div class="miniState">Qualifying inbound → booking meetings</div></div>
           </div>
-          <div class="preview-card">
-            <div class="preview-head">
-              <span>Invoice</span><span>Issue</span><span>Amount</span><span>Status</span>
-            </div>
-            <div class="preview-row">
-              <strong class="mono">INV-1048</strong><span>Rate mismatch</span><strong class="mono">$184</strong><span class="flag flag-blue">Review</span>
-            </div>
-            <div class="preview-row">
-              <strong class="mono">INV-1071</strong><span>Duplicate accessorial</span><strong class="mono">$96</strong><span class="flag flag-amber">Check</span>
-            </div>
-            <div class="preview-row">
-              <strong class="mono">INV-1089</strong><span>Missing POD</span><strong class="mono">—</strong><span class="flag flag-amber">Chase</span>
-            </div>
-            <div class="preview-row">
-              <strong class="mono">INV-1103</strong><span>Rate matched</span><strong class="mono">$1,240</strong><span class="flag flag-green">Clear</span>
-            </div>
-            <div class="preview-foot">This is an illustrative example of the report format — not a customer result.</div>
-          </div>
+          <div class="boardFoot">The point is not another chat window. Each employee owns a recurring workflow, follows its rules and hands work to the next employee when needed.</div>
         </div>
       </div>
     </section>
 
-    <section class="proof">
-      <div class="container proof-inner">
-        <div class="proof-item">
-          <span class="proof-kicker">First step</span>
-          <span class="proof-value">20–25 recent invoices</span>
-          <span class="proof-sub">A small sample is enough to start.</span>
-        </div>
-        <div class="proof-item">
-          <span class="proof-kicker">Focus</span>
-          <span class="proof-value">Billing + documentation</span>
-          <span class="proof-sub">Where money and paperwork meet.</span>
-        </div>
-        <div class="proof-item">
-          <span class="proof-kicker">Output</span>
-          <span class="proof-value">Exception report</span>
-          <span class="proof-sub">Issues, evidence and next actions.</span>
-        </div>
-        <div class="proof-item">
-          <span class="proof-kicker">Cost</span>
-          <span class="proof-value">Free first audit</span>
-          <span class="proof-sub">No software purchase required.</span>
-        </div>
+    <section class="strip">
+      <div class="container stripInner">
+        <div class="stripItem"><span class="stripKicker">Designed for</span><span class="stripValue">Revenue + operations</span><span class="stripSub">The work behind growth.</span></div>
+        <div class="stripItem"><span class="stripKicker">Each employee</span><span class="stripValue">Role + rules + tone</span><span class="stripSub">Not a generic chatbot.</span></div>
+        <div class="stripItem"><span class="stripKicker">Works with</span><span class="stripValue">Your existing stack</span><span class="stripSub">CRM, inbox, docs and data.</span></div>
+        <div class="stripItem"><span class="stripKicker">Built around</span><span class="stripValue">Real workflows</span><span class="stripSub">Not AI demos.</span></div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="agents">
       <div class="container">
-        <div class="section-intro">
-          <div class="section-label">The problem</div>
-          <h2>Revenue can leak in the boring part of freight.</h2>
-          <p class="lead">A delivered load is not the same thing as a clean billing workflow. Missing paperwork, mismatched rates and accessorials often create work that sits between operations and finance.</p>
+        <div class="agentsHead">
+          <div class="agentsIntro">
+            <div class="label">Meet the team</div>
+            <h2>Eight employees. Eight jobs. One operating system.</h2>
+            <p class="lead">Each agent has a specific responsibility, a working style and a defined handoff. You decide where humans stay in the loop.</p>
+          </div>
+          <div class="agentsNote">The names are the working identities of the agents — not separate SaaS products.</div>
         </div>
 
-        <div class="grid-3" id="process">
-          <article class="card">
-            <div class="number">01 / INGEST</div>
-            <h3>Start with what you already have</h3>
-            <p>Use a small export or invoice sample. The first audit does not require replacing your TMS or rebuilding your tech stack.</p>
+        <div class="agents">
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">SC</div><div class="agentRole">01 · Sales Development</div></div>
+            <h3>Scout</h3><div class="personality">The hunter · curious, sharp, persistent</div>
+            <p>Finds target accounts, researches decision-makers, qualifies fit and prepares personalized first-touch outreach.</p>
+            <div class="agentFoot"><span class="tag">Prospecting</span><span class="tag">Research</span><span class="tag">Outreach</span></div>
+            <div class="quote"><strong>Owns:</strong> the top of your pipeline.</div>
           </article>
-          <article class="card">
-            <div class="number">02 / REVIEW</div>
-            <h3>Surface the exceptions</h3>
-            <p>We inspect the billing fields and supporting documents for mismatches, missing information and charges that deserve review.</p>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">TR</div><div class="agentRole">02 · Documents</div></div>
+            <h3>Trace</h3><div class="personality">The meticulous one · patient, exact, unforgiving</div>
+            <p>Reads PDFs, forms and attachments, extracts information, checks completeness and routes exceptions to the right person.</p>
+            <div class="agentFoot"><span class="tag">PDFs</span><span class="tag">Data capture</span><span class="tag">Validation</span></div>
+            <div class="quote"><strong>Owns:</strong> the information hidden in your files.</div>
           </article>
-          <article class="card">
-            <div class="number">03 / RECOVER</div>
-            <h3>Turn issues into actions</h3>
-            <p>You get a prioritized list of what to review, what evidence supports it and what should happen next.</p>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">LE</div><div class="agentRole">03 · Finance</div></div>
+            <h3>Ledger</h3><div class="personality">The numbers person · calm, skeptical, precise</div>
+            <p>Handles invoice checks, reconciliations, exceptions and routine finance follow-up while escalating anything that needs judgment.</p>
+            <div class="agentFoot"><span class="tag">AP / AR</span><span class="tag">Reconciliation</span><span class="tag">Exceptions</span></div>
+            <div class="quote"><strong>Owns:</strong> the repetitive layer around money.</div>
+          </article>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">RT</div><div class="agentRole">04 · Operations</div></div>
+            <h3>Route</h3><div class="personality">The operator · structured, decisive, unflappable</div>
+            <p>Keeps work moving: tasks, handoffs, status checks, missing information and operational exceptions across teams.</p>
+            <div class="agentFoot"><span class="tag">Coordination</span><span class="tag">Exceptions</span><span class="tag">Handoffs</span></div>
+            <div class="quote"><strong>Owns:</strong> the space between departments.</div>
+          </article>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">FO</div><div class="agentRole">05 · Follow-up</div></div>
+            <h3>Follow</h3><div class="personality">The finisher · persistent, tactful, organized</div>
+            <p>Chases the work that quietly goes cold: quotes, approvals, renewals, outstanding replies and next steps.</p>
+            <div class="agentFoot"><span class="tag">Follow-ups</span><span class="tag">Pipeline</span><span class="tag">Recovery</span></div>
+            <div class="quote"><strong>Owns:</strong> what your team keeps meaning to follow up on.</div>
+          </article>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">CS</div><div class="agentRole">06 · Customer Support</div></div>
+            <h3>Sage</h3><div class="personality">The calm one · warm, clear, composed</div>
+            <p>Handles repetitive customer requests, triage, status questions and routine responses without losing context.</p>
+            <div class="agentFoot"><span class="tag">Inbox</span><span class="tag">Triage</span><span class="tag">Customer updates</span></div>
+            <div class="quote"><strong>Owns:</strong> the questions your team answers every day.</div>
+          </article>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">TA</div><div class="agentRole">07 · Talent</div></div>
+            <h3>Talent</h3><div class="personality">The recruiter · attentive, selective, human</div>
+            <p>Finds candidates, organizes screening information, coordinates scheduling and keeps recruiting workflows moving.</p>
+            <div class="agentFoot"><span class="tag">Sourcing</span><span class="tag">Screening</span><span class="tag">Scheduling</span></div>
+            <div class="quote"><strong>Owns:</strong> the repetitive coordination around hiring.</div>
+          </article>
+
+          <article class="agentCard">
+            <div class="agentHead"><div class="agentAvatar">VO</div><div class="agentRole">08 · Voice</div></div>
+            <h3>Voice</h3><div class="personality">The closer · confident, concise, always available</div>
+            <p>Handles inbound and outbound calls for qualification, scheduling, status collection and routine conversations.</p>
+            <div class="agentFoot"><span class="tag">Inbound</span><span class="tag">Outbound</span><span class="tag">Scheduling</span></div>
+            <div class="quote"><strong>Owns:</strong> phone work that does not need a human every minute.</div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="checks">
-      <div class="container">
-        <div class="section-intro">
-          <div class="section-label">What we check</div>
-          <h2>One narrow workflow. Clear exceptions.</h2>
-          <p class="lead">The point of the audit is not to give you another dashboard. It is to make the messy handoff between freight operations and billing easier to see.</p>
+    <section class="section soft" id="workflow">
+      <div class="container workflow">
+        <div class="workflowCopy">
+          <div class="label">How the team works</div>
+          <h2>They do not just answer questions. They move work.</h2>
+          <p class="lead">The value comes from the handoffs. One employee can research, another can act, another can verify — with people stepping in where judgment is required.</p>
+          <div class="sectionCta"><a class="btn primary" href="#contact">Design a workflow →</a></div>
         </div>
+        <div class="workflowList">
+          <div class="flowItem"><div class="flowNum">01</div><div><h3>Scout finds the opportunity</h3><p>Account research, qualification and first-touch preparation.</p></div><div class="arrow">→</div></div>
+          <div class="flowItem"><div class="flowNum">02</div><div><h3>Follow keeps the conversation alive</h3><p>Structured follow-up based on response, stage and timing.</p></div><div class="arrow">→</div></div>
+          <div class="flowItem"><div class="flowNum">03</div><div><h3>Trace reads the paperwork</h3><p>Documents are extracted, checked and routed instead of sitting in an inbox.</p></div><div class="arrow">→</div></div>
+          <div class="flowItem"><div class="flowNum">04</div><div><h3>Ledger verifies the numbers</h3><p>Invoices, records and exceptions are reconciled against your rules.</p></div><div class="arrow">→</div></div>
+          <div class="flowItem"><div class="flowNum">05</div><div><h3>Route keeps operations moving</h3><p>Tasks and exceptions are pushed to the right owner before they stall.</p></div><div class="arrow">→</div></div>
+          <div class="flowItem"><div class="flowNum">06</div><div><h3>Voice + Sage handle the routine conversations</h3><p>Calls, updates and repetitive customer requests continue without waiting for office hours.</p></div><div class="arrow">→</div></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="checks">
-          <div class="check-card">
-            <h3>Invoice and rate checks</h3>
-            <div class="check-list">
-              <div class="check"><span class="check-icon">✓</span><span>Rate confirmation vs. invoice amount</span></div>
-              <div class="check"><span class="check-icon">✓</span><span>Duplicate or repeated charges</span></div>
-              <div class="check"><span class="check-icon">✓</span><span>Fuel, detention, layover, lumper and other accessorials</span></div>
-              <div class="check"><span class="check-icon">✓</span><span>Unexpected discrepancies worth human review</span></div>
-            </div>
-          </div>
-          <div class="check-card">
-            <h3>Documentation and billing readiness</h3>
-            <div class="check-list">
-              <div class="check"><span class="check-icon">✓</span><span>POD / BOL availability and completeness</span></div>
-              <div class="check"><span class="check-icon">✓</span><span>Missing supporting documents</span></div>
-              <div class="check"><span class="check-icon">✓</span><span>Load identifiers and billing-field consistency</span></div>
-              <div class="check"><span class="check-icon">✓</span><span>Exceptions that need follow-up before billing or payment</span></div>
-            </div>
+    <section class="section" id="built">
+      <div class="container">
+        <div class="proofPanel">
+          <div class="eyebrow">Built around the work</div>
+          <h3>Your employees should feel like specialists — because they are.</h3>
+          <p>We do not start by handing you a generic chatbot. We map the job, define the rules, connect the systems and shape the agent around the way your company actually operates.</p>
+          <div class="proofGrid">
+            <div class="proofBox"><strong>Role</strong><span>What this employee owns and where its responsibility starts and ends.</span></div>
+            <div class="proofBox"><strong>Personality</strong><span>How it communicates with customers, prospects and your team.</span></div>
+            <div class="proofBox"><strong>Workflow</strong><span>What it reads, decides, executes, records and hands off.</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="audit-section" id="audit">
-      <div class="container">
-        <div class="section-intro">
-          <div class="section-label">Free first audit</div>
-          <h2>Let us look at a small sample before you buy anything.</h2>
-          <p class="lead">A short conversation is enough to establish the workflow. From there, we can review a small sample and show you the kind of exceptions the process surfaces.</p>
+    <section class="cta" id="contact">
+      <div class="container ctaPanel">
+        <div>
+          <div class="label">Build your team</div>
+          <h2>Tell us the work you are tired of doing manually.</h2>
+          <p>We will map the process first, identify which jobs are repeatable and show you where specialized AI employees can take over execution. No generic demo. No need to replace your existing systems to start the conversation.</p>
+          <div class="heroNote" style="color:#667085;margin-top:22px"><span><i class="dot"></i>Start with one workflow</span><span><i class="dot"></i>Expand to a team</span></div>
         </div>
-
-        <div class="audit-layout">
-          <div class="audit-copy-card">
-            <div class="eyebrow">No software pitch</div>
-            <h3>We are not asking you to replace your TMS.</h3>
-            <p>The first step is a focused review of the work your team is already doing. You keep your existing systems; we look at the repetitive layer around billing and documentation.</p>
-            <div class="audit-list">
-              <div><i>✓</i><span>Bring 20–25 recent invoices or a small export</span></div>
-              <div><i>✓</i><span>Redact customer-sensitive information where needed</span></div>
-              <div><i>✓</i><span>Get a concise exception report</span></div>
-              <div><i>✓</i><span>Decide whether a managed workflow makes economic sense</span></div>
+        <div class="formCard">
+          <h3>Start the conversation</h3>
+          <p>Give us enough context to understand the workflow.</p>
+          <form onsubmit="return openBooking(event)">
+            <div class="grid">
+              <label>Company<input name="company" placeholder="Company name" autocomplete="organization" required></label>
+              <label>Work email<input name="email" type="email" placeholder="you@company.com" autocomplete="email" required></label>
+              <label>Team / role<input name="role" placeholder="Your role"></label>
+              <label>Biggest repetitive workflow<select name="workflow" required><option value="" selected disabled>Choose one</option><option>Sales / prospecting</option><option>Follow-up / pipeline</option><option>Documents / data entry</option><option>Finance / billing</option><option>Operations / coordination</option><option>Customer support</option><option>Recruiting</option><option>Calls / scheduling</option><option>Something else</option></select></label>
+              <label class="full">What is currently manual?<textarea name="problem" placeholder="Describe the job, the systems involved and where it gets stuck." required></textarea></label>
             </div>
-          </div>
-
-          <div class="audit-form-card">
-            <div class="audit-form-top">
-              <div>
-                <h3>Request the audit</h3>
-                <p>Tell us a little about the workflow. We will use the call to scope the right sample.</p>
-              </div>
-              <span class="free-chip">Free first review</span>
+            <div class="formBottom">
+              <span class="formNote">The form currently opens the existing 15-minute booking flow. CRM capture and workflow intake can be connected next.</span>
+              <button class="btn primary" type="submit">Book a workflow call →</button>
             </div>
-
-            <form onsubmit="return openAuditBooking(event)">
-              <div class="form-grid">
-                <label>
-                  Company
-                  <input name="company" autocomplete="organization" placeholder="Your company" required>
-                </label>
-                <label>
-                  Work email
-                  <input name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
-                </label>
-                <label>
-                  Monthly loads
-                  <select name="loads" required>
-                    <option value="" selected disabled>Select range</option>
-                    <option>Under 250</option>
-                    <option>250–1,000</option>
-                    <option>1,000–5,000</option>
-                    <option>5,000+</option>
-                  </select>
-                </label>
-                <label>
-                  Current billing setup
-                  <select name="setup" required>
-                    <option value="" selected disabled>Select one</option>
-                    <option>Internal billing team</option>
-                    <option>Outsourced billing</option>
-                    <option>Ops + finance share the work</option>
-                    <option>Mixed / other</option>
-                  </select>
-                </label>
-                <label class="full">
-                  Where does the work get stuck?
-                  <textarea name="problem" placeholder="For example: carrier invoices, POD collection, accessorial review, invoice disputes..." required></textarea>
-                </label>
-              </div>
-
-              <div class="form-actions">
-                <span class="form-disclaimer">No customer names or payment information are needed for the initial conversation.</span>
-                <button class="btn btn-primary form-button" type="submit">Continue to audit call →</button>
-              </div>
-              <div class="form-note"><strong>Booking:</strong> the audit request currently continues to the existing 15-minute booking page. The secure upload / CRM capture step will be connected before paid traffic is turned on.</div>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </section>
 
     <section class="section" id="faq">
       <div class="container">
-        <div class="section-intro">
-          <div class="section-label">FAQ</div>
-          <h2>Keep the first step simple.</h2>
-        </div>
-        <div class="faq">
-          <article class="faq-item">
-            <h3>Do we need a new TMS?</h3>
-            <p>No. The initial audit is designed around the data and documents you already have.</p>
-          </article>
-          <article class="faq-item">
-            <h3>What should we send?</h3>
-            <p>A small sample of recent freight invoices is the starting point. Rate confirmations and POD/BOL documents are useful where available.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Will this replace our billing team?</h3>
-            <p>The first step is an audit, not a headcount decision. A later managed workflow can automate repetitive work while keeping people involved for exceptions.</p>
-          </article>
-          <article class="faq-item">
-            <h3>What happens after the audit?</h3>
-            <p>You receive a clear view of the workflow issues we found. We can then discuss whether a paid pilot makes economic sense for your operation.</p>
-          </article>
+        <div class="label">FAQ</div>
+        <h2>Start narrow. Build the team from there.</h2>
+        <div class="faqGrid">
+          <article class="faqItem"><h3>Are these generic chatbots?</h3><p>No. The model is to give each employee a defined job, tools, rules, workflow and handoff rather than one assistant that tries to do everything.</p></article>
+          <article class="faqItem"><h3>Do we need to replace our existing software?</h3><p>Not necessarily. The intended workflow is to connect the systems you already use and automate the repetitive layer around them.</p></article>
+          <article class="faqItem"><h3>Can we start with just one employee?</h3><p>Yes. A single workflow can be mapped first, then additional employees can be added where the handoffs make sense.</p></article>
+          <article class="faqItem"><h3>Are humans still involved?</h3><p>Yes. The system can be designed around approval points, exceptions and escalation so people remain responsible for decisions that require judgment.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="bottom-cta">
-      <div class="container bottom-cta-inner">
+    <section class="bottom">
+      <div class="container bottomInner">
         <div>
-          <h2>Before you add another billing seat, see what the existing workflow is actually costing you.</h2>
-          <p>Start with a small sample. No long implementation and no requirement to replace your current systems.</p>
+          <h2>Do not add another dashboard. Add the employee that owns the job.</h2>
+          <p>Tell us which workflow is consuming the most repetitive human time, and we will start there.</p>
         </div>
-        <a class="btn btn-secondary" href="#audit" style="white-space:nowrap">Request free audit →</a>
+        <a class="btn secondary" href="#contact" style="white-space:nowrap">Build the team →</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div><span class="footer-brand">GrowStackUp</span> · Freight billing audit</div>
-      <div class="footer-note">© 2026 GrowStackUp. All rights reserved.</div>
+    <div class="container footerInner">
+      <div><span class="footerBrand">GrowStackUp</span> · AI workforce for business</div>
+      <div class="footerNote">© 2026 GrowStackUp. Specialized agents. Real workflows.</div>
     </div>
   </footer>
 
   <script>
-    function openAuditBooking(event) {
+    function openBooking(event){
       event.preventDefault();
-      window.open("https://calendly.com/growstackup/15min", "_blank", "noopener,noreferrer");
+      window.open("https://calendly.com/growstackup/15min","_blank","noopener,noreferrer");
       return false;
     }
   </script>
