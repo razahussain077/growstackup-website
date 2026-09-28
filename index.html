@@ -3,337 +3,307 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b5cff">
-  <meta name="description" content="GrowStackUp builds AI employees for sales, operations, finance, documents, support and more — each with a defined job, personality and workflow.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b5cff'/%3E%3Cpath d='M45 16c-6-4-13-6-21-6-9 0-15 4-15 10 0 6 5 8 14 11l7 2c5 1 7 3 7 6 0 4-4 7-10 7-7 0-13-2-18-7l-4 8c6 5 14 7 23 7 11 0 18-5 18-13 0-6-5-9-14-12l-7-2c-4-1-6-2-6-4 0-3 4-5 9-5 5 0 10 2 14 5l3-7Z' fill='white'/%3E%3C/svg%3E">
-  <title>GrowStackUp | AI Employees for Real Business Work</title>
+  <meta name="theme-color" content="#071529">
+  <meta name="description" content="GrowStackUp builds specialized AI employees that take ownership of repetitive business work across sales, operations, finance, documents, support, recruiting and voice.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%230b5cff'/%3E%3Cpath d='M45 16c-6-4-13-6-21-6-9 0-15 4-15 10 0 6 5 8 14 11l7 2c5 1 7 3 7 6 0 4-4 7-10 7-7 0-13-2-18-7l-4 8c6 5 14 7 23 7 11 0 18-5 18-13 0-6-5-9-14-12l-7-2c-4-1-6-2-6-4 0-3 4-5 9-5 5 0 10 2 14 5l3-7Z' fill='white'/%3E%3C/svg%3E">
+  <title>GrowStackUp — AI employees for work that keeps repeating</title>
   <style>
     :root{
-      --navy:#071529;
-      --navy2:#0c2343;
-      --blue:#0b5cff;
-      --blue2:#0849c9;
-      --blueSoft:#eef4ff;
-      --ink:#101828;
-      --muted:#667085;
-      --line:#e4e9f0;
-      --bg:#f7f9fc;
-      --surface:#fff;
-      --green:#0c7a5a;
+      --blue:#0b5cff;--blueDark:#0849c9;--navy:#071529;--navy2:#0d2544;
+      --ink:#0f1728;--muted:#667085;--subtle:#98a2b3;--line:#e7ebf0;
+      --paper:#f7f8fa;--white:#fff;--green:#0b7a5b;--amber:#9a6700;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;color:var(--ink);background:var(--surface);
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      -webkit-font-smoothing:antialiased
+      margin:0;background:var(--white);color:var(--ink);
+      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
     }
-    a{color:inherit;text-decoration:none} button{font:inherit}
-    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
-    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(228,233,240,.85)}
-    .navInner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.035em}
-    .mark{width:34px;height:34px;border-radius:10px;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:18px;font-weight:900}
-    .brandName{font-size:17px}.brandMeta{display:block;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#98a2b3;font-weight:700;margin-top:2px}
-    .navLinks{display:flex;align-items:center;gap:28px;color:#475467;font-size:13px;font-weight:600}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(1180px,calc(100% - 44px));margin:0 auto}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(231,235,240,.9)}
+    .navRow{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:33px;height:33px;background:var(--blue);border-radius:10px;color:#fff;display:grid;place-items:center;font-size:18px;font-weight:900;letter-spacing:-.05em}
+    .brandText{font-weight:850;font-size:16px;letter-spacing:-.035em}.brandMeta{display:block;margin-top:2px;color:#a0a8b5;font-size:8px;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
+    .navLinks{display:flex;gap:26px;align-items:center;color:#475467;font-size:12px;font-weight:700}
     .navLinks a:hover{color:var(--ink)}
-    .navCta{display:flex;gap:9px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:10px;padding:12px 16px;border:1px solid var(--line);font-size:12px;font-weight:800;transition:.18s ease;cursor:pointer}
+    .navActions{display:flex;gap:8px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:9px;padding:11px 15px;border:1px solid var(--line);font-size:11px;font-weight:850;transition:transform .18s ease,background .18s ease,border-color .18s ease;white-space:nowrap}
     .btn:hover{transform:translateY(-1px)}
-    .primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(11,92,255,.18)}
-    .primary:hover{background:var(--blue2);border-color:var(--blue2)}
-    .secondary{background:#fff;color:#344054}
-    .secondary:hover{border-color:#c7d2e2}
-    .hero{
-      color:#fff;overflow:hidden;
-      background:
-        radial-gradient(circle at 78% 18%,rgba(38,122,255,.22),transparent 27%),
-        radial-gradient(circle at 85% 80%,rgba(0,200,255,.08),transparent 22%),
-        linear-gradient(135deg,var(--navy),var(--navy2))
+    .primary{background:var(--blue);border-color:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(11,92,255,.16)}
+    .primary:hover{background:var(--blueDark);border-color:var(--blueDark)}
+    .ghost{background:rgba(255,255,255,.03);color:#fff;border-color:rgba(255,255,255,.18)}
+    .ghost:hover{background:rgba(255,255,255,.08)}
+    .outline{background:#fff;color:#344054}.outline:hover{border-color:#cdd6e2}
+    .hero{background:
+      radial-gradient(circle at 84% 18%,rgba(83,142,255,.2),transparent 27%),
+      linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;overflow:hidden
     }
-    .heroInner{padding:92px 0 86px;display:grid;grid-template-columns:minmax(0,1fr) minmax(390px,.8fr);gap:64px;align-items:center}
-    .eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#8db5ff}
-    h1{font-size:clamp(44px,5.4vw,72px);line-height:.99;letter-spacing:-.06em;margin:15px 0 22px;max-width:760px}
-    .heroCopy{font-size:18px;line-height:1.62;color:#c6d3e3;max-width:680px;margin:0}
-    .heroActions{display:flex;gap:11px;flex-wrap:wrap;margin-top:31px}
-    .hero .secondary{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);color:#fff}
-    .hero .secondary:hover{background:rgba(255,255,255,.1)}
-    .heroNote{display:flex;gap:20px;flex-wrap:wrap;margin-top:25px;color:#96aac5;font-size:11px}
-    .heroNote span{display:inline-flex;align-items:center;gap:7px}
-    .dot{width:6px;height:6px;border-radius:50%;background:#72d7ae;box-shadow:0 0 0 4px rgba(114,215,174,.1)}
-    .teamBoard{background:#fff;color:var(--ink);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:14px;box-shadow:0 28px 70px rgba(0,0,0,.28)}
-    .boardTop{display:flex;align-items:center;justify-content:space-between;padding:7px 8px 13px}
-    .boardTitle{font-size:11px;font-weight:850;letter-spacing:.04em}.boardStatus{font-size:9px;font-weight:850;color:var(--green);background:#ecfdf3;padding:5px 8px;border-radius:999px}
-    .boardGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .miniAgent{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfe}
-    .miniTop{display:flex;align-items:center;justify-content:space-between;gap:8px}
-    .avatar{width:29px;height:29px;border-radius:9px;background:var(--blueSoft);color:var(--blue);display:grid;place-items:center;font-size:10px;font-weight:900}
-    .miniAgent strong{font-size:10px}.miniAgent span{display:block;color:#98a2b3;font-size:8px;margin-top:2px}
-    .miniState{margin-top:9px;font-size:8px;color:#667085;line-height:1.4}
-    .boardFoot{border-top:1px solid var(--line);margin-top:11px;padding:11px 8px 1px;color:#667085;font-size:9px;line-height:1.5}
-    .strip{border-bottom:1px solid var(--line);background:#fff}
-    .stripInner{display:grid;grid-template-columns:repeat(4,1fr)}
-    .stripItem{padding:18px 22px;border-right:1px solid var(--line)}
-    .stripItem:last-child{border-right:0}
-    .stripKicker{display:block;color:#98a2b3;font-size:8px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
-    .stripValue{display:block;margin-top:7px;font-size:13px;font-weight:850;letter-spacing:-.02em}.stripSub{display:block;margin-top:3px;color:#667085;font-size:10px}
-    .section{padding:88px 0}.soft{background:var(--bg)}
-    .label{color:var(--blue);font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:900}
-    h2{font-size:clamp(33px,4vw,50px);line-height:1.06;letter-spacing:-.05em;margin:10px 0 15px;max-width:790px}
-    .lead{font-size:16px;line-height:1.65;color:var(--muted);margin:0;max-width:760px}
-    .agentsHead{display:flex;justify-content:space-between;gap:30px;align-items:end}
-    .agentsIntro{max-width:790px}.agentsNote{font-size:10px;color:#98a2b3;max-width:200px;line-height:1.5;text-align:right}
-    .agents{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:40px}
-    .agentCard{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;min-height:235px;box-shadow:0 5px 20px rgba(16,24,40,.035);display:flex;flex-direction:column}
-    .agentCard:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(16,24,40,.07)}
-    .agentHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
-    .agentAvatar{width:44px;height:44px;border-radius:13px;background:var(--blueSoft);color:var(--blue);display:grid;place-items:center;font-size:14px;font-weight:900;flex:none}
-    .agentRole{font-size:8px;letter-spacing:.11em;text-transform:uppercase;color:#98a2b3;font-weight:900;text-align:right}
-    .agentCard h3{font-size:19px;letter-spacing:-.03em;margin:16px 0 4px}.agentCard .personality{font-size:10px;color:var(--blue);font-weight:800}
-    .agentCard p{font-size:11px;line-height:1.6;color:var(--muted);margin:10px 0 0}
-    .agentFoot{margin-top:auto;padding-top:16px;display:flex;gap:6px;flex-wrap:wrap}
-    .tag{font-size:8px;font-weight:800;color:#475467;background:#f5f7fa;border:1px solid #ebeff4;border-radius:999px;padding:5px 7px}
-    .quote{margin-top:11px;padding:11px 12px;border-radius:10px;background:#f8fafc;border:1px solid #edf1f5;color:#667085;font-size:9px;line-height:1.45}
-    .quote strong{color:#344054}
-    .workflow{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:54px;align-items:start;margin-top:40px}
-    .workflowCopy{position:sticky;top:106px}
-    .workflowList{display:grid;gap:10px}
-    .flowItem{display:grid;grid-template-columns:36px 1fr auto;gap:13px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 15px}
-    .flowNum{width:30px;height:30px;border-radius:9px;background:var(--blueSoft);color:var(--blue);display:grid;place-items:center;font-size:9px;font-weight:900}
-    .flowItem h3{margin:0;font-size:12px;letter-spacing:-.01em}.flowItem p{margin:4px 0 0;color:#667085;font-size:9px;line-height:1.45}
-    .arrow{color:#98a2b3;font-size:13px}
-    .sectionCta{margin-top:31px}
-    .proofPanel{background:var(--navy);border-radius:18px;color:#fff;padding:34px}
-    .proofPanel h3{font-size:28px;line-height:1.13;letter-spacing:-.04em;margin:10px 0 13px;max-width:620px}
-    .proofPanel p{margin:0;color:#b9c8da;font-size:13px;line-height:1.6;max-width:640px}
-    .proofGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
-    .proofBox{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:11px;padding:16px}
-    .proofBox strong{display:block;font-size:12px}.proofBox span{display:block;color:#96aac5;font-size:9px;line-height:1.45;margin-top:5px}
-    .cta{padding:88px 0}.ctaPanel{display:grid;grid-template-columns:1fr .84fr;gap:35px;background:#f4f7fb;border:1px solid var(--line);border-radius:18px;padding:35px;align-items:start}
-    .ctaPanel h2{margin-top:9px}.ctaPanel p{font-size:13px;line-height:1.6;color:var(--muted);max-width:600px}
-    .formCard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px}
-    .formCard h3{font-size:17px;margin:0}.formCard p{font-size:10px;color:#667085;margin:5px 0 0}
-    form{margin-top:18px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    label{display:grid;gap:6px;color:#667085;font-size:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:850}
-    input,select,textarea{width:100%;padding:11px 12px;border:1px solid #d8e0ea;border-radius:9px;background:#fff;color:var(--ink);font:inherit;font-size:11px;letter-spacing:normal;text-transform:none;outline:none}
-    textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}
-    input:focus,select:focus,textarea:focus{border-color:#8db5ff;box-shadow:0 0 0 3px rgba(11,92,255,.08)}
-    .formBottom{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:14px}
-    .formNote{font-size:8px;line-height:1.45;color:#98a2b3;max-width:220px}
-    .faqGrid{display:grid;grid-template-columns:1fr 1fr;gap:0 42px;margin-top:34px}
-    .faqItem{padding:19px 0;border-top:1px solid var(--line)}.faqItem h3{font-size:13px;margin:0 0 8px}.faqItem p{font-size:11px;line-height:1.6;color:var(--muted);margin:0}
-    .bottom{background:var(--blue);color:#fff;padding:70px 0}.bottomInner{display:flex;justify-content:space-between;gap:25px;align-items:end}.bottom h2{margin:0;max-width:760px}.bottom p{margin:12px 0 0;color:#dbe8ff;font-size:13px;line-height:1.5;max-width:650px}
-    .footer{background:var(--navy);color:#a9b8ca;border-top:1px solid rgba(255,255,255,.07)}.footerInner{padding:27px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px}.footerBrand{color:#fff;font-weight:850}.footerNote{color:#7f92a8}
-    .srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    @media(max-width:980px){
-      .navLinks{display:none}.heroInner{grid-template-columns:1fr;gap:42px;padding:70px 0}.teamBoard{max-width:700px}
-      .agents{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:1fr}.workflowCopy{position:static}
-      .ctaPanel{grid-template-columns:1fr}.agentsHead{align-items:start}.agentsNote{text-align:left;max-width:none}
-    }
+    .heroRow{min-height:650px;padding:84px 0 70px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(430px,.78fr);gap:70px;align-items:center}
+    .eyebrow{font-size:9px;letter-spacing:.19em;text-transform:uppercase;font-weight:900;color:#8cb4ff}
+    h1{font-size:clamp(48px,6vw,78px);line-height:.94;letter-spacing:-.07em;max-width:800px;margin:15px 0 24px}
+    .heroText{max-width:665px;color:#c5d2e1;font-size:17px;line-height:1.64;margin:0}
+    .heroActions{display:flex;gap:9px;flex-wrap:wrap;margin-top:30px}
+    .heroFine{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;color:#91a5bd;font-size:10px}
+    .heroFine span{display:flex;gap:7px;align-items:center}.tinyDot{width:5px;height:5px;border-radius:50%;background:#70d3aa}
+    .console{background:#fff;color:var(--ink);border-radius:18px;border:1px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.3);overflow:hidden}
+    .consoleHead{height:48px;padding:0 15px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+    .windowDots{display:flex;gap:5px}.windowDots i{width:6px;height:6px;background:#d6dbe2;border-radius:50%;display:block}
+    .consoleTitle{font-size:10px;font-weight:850;letter-spacing:.02em}.consoleStatus{font-size:8px;color:var(--green);font-weight:850}
+    .consoleBody{padding:16px}
+    .queue{display:grid;gap:8px}
+    .job{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:11px;padding:10px 11px}
+    .jobAvatar{width:30px;height:30px;border-radius:9px;background:#eef4ff;color:var(--blue);display:grid;place-items:center;font-size:9px;font-weight:900}
+    .job strong{font-size:10px;display:block}.job span{font-size:8px;color:var(--muted);display:block;margin-top:2px}
+    .jobState{font-size:8px;color:var(--green);font-weight:850}
+    .consoleDivider{height:1px;background:var(--line);margin:14px 0}
+    .activityLabel{font-size:8px;color:var(--subtle);letter-spacing:.12em;text-transform:uppercase;font-weight:900}
+    .activity{display:grid;gap:9px;margin-top:8px}
+    .activityRow{display:flex;justify-content:space-between;gap:15px;font-size:9px;color:#475467}
+    .activityRow b{font-weight:800;color:#344054}.activityRow em{font-style:normal;color:#98a2b3;font-variant-numeric:tabular-nums}
+    .consoleFoot{padding:10px 16px;background:#fafbfc;border-top:1px solid var(--line);font-size:8px;line-height:1.5;color:#7c8796}
+    .signalBar{background:#fff;border-bottom:1px solid var(--line)}
+    .signalRow{display:grid;grid-template-columns:repeat(4,1fr)}
+    .signal{padding:18px 22px;border-right:1px solid var(--line)}.signal:last-child{border-right:0}
+    .signalLabel{display:block;color:var(--subtle);font-size:8px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+    .signalMain{display:block;margin-top:7px;font-size:13px;font-weight:850;letter-spacing:-.02em}.signalSub{display:block;margin-top:3px;color:#667085;font-size:9px}
+    .section{padding:94px 0}.paper{background:var(--paper)}
+    .sectionKicker{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:900}
+    h2{font-size:clamp(35px,4.5vw,54px);line-height:1.02;letter-spacing:-.055em;max-width:820px;margin:11px 0 17px}
+    .lead{margin:0;max-width:760px;color:var(--muted);font-size:15px;line-height:1.68}
+    .intro{display:flex;justify-content:space-between;gap:32px;align-items:flex-end}
+    .introAside{width:220px;color:#98a2b3;font-size:9px;line-height:1.55;text-align:right}
+    .teamLayout{display:grid;grid-template-columns:270px 1fr;gap:16px;margin-top:43px}
+    .agentNav{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px}
+    .agentBtn{width:100%;display:grid;grid-template-columns:35px 1fr auto;gap:10px;align-items:center;text-align:left;border:0;background:transparent;border-radius:9px;padding:10px 9px;color:#344054}
+    .agentBtn:hover{background:#f6f8fb}.agentBtn.active{background:#edf4ff;color:#0b4dcc}
+    .agentIcon{width:30px;height:30px;border-radius:9px;background:#f2f5f9;display:grid;place-items:center;font-size:8px;font-weight:900;color:#526071}
+    .agentBtn.active .agentIcon{background:#dbe8ff;color:var(--blue)}
+    .agentBtn strong{font-size:10px;display:block}.agentBtn span{display:block;margin-top:2px;font-size:8px;color:#98a2b3}.agentBtn.active span{color:#6386bf}
+    .agentArrow{font-size:11px;color:#b4bcc6}
+    .agentDetail{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+    .detailTop{padding:27px 29px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:25px;align-items:flex-start}
+    .detailIdentity{display:flex;gap:14px;align-items:center}.detailIcon{width:48px;height:48px;border-radius:14px;background:#edf4ff;color:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:900}
+    .detailRole{font-size:8px;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#98a2b3}.detailName{font-size:28px;letter-spacing:-.04em;font-weight:900;margin-top:3px}.detailTag{display:inline-block;margin-top:5px;color:var(--blue);font-size:9px;font-weight:850}
+    .detailQuote{max-width:280px;text-align:right;color:#7a8492;font-size:10px;line-height:1.5}
+    .detailGrid{display:grid;grid-template-columns:1.1fr .9fr}
+    .detailPane{padding:25px 29px}.detailPane + .detailPane{border-left:1px solid var(--line)}
+    .miniLabel{font-size:8px;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:#98a2b3}
+    .detailPane h3{font-size:14px;margin:8px 0 9px;letter-spacing:-.015em}.detailPane p{font-size:11px;line-height:1.62;color:#667085;margin:0}
+    .list{display:grid;margin-top:15px;gap:8px}.listRow{display:flex;gap:8px;align-items:flex-start;font-size:9px;color:#475467;line-height:1.45}.check{width:15px;height:15px;border-radius:5px;background:#edf4ff;color:var(--blue);font-size:9px;display:grid;place-items:center;flex:none;font-weight:900}
+    .pillRow{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}.pill{border:1px solid #e7ebf0;background:#fafbfc;padding:6px 8px;border-radius:999px;font-size:8px;font-weight:800;color:#566274}
+    .handoff{margin-top:16px;padding-top:15px;border-top:1px solid var(--line);font-size:9px;color:#667085}.handoff b{color:#344054}
+    .flow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:42px}
+    .flowCard{border:1px solid var(--line);background:#fff;border-radius:14px;padding:22px;position:relative;min-height:195px}
+    .flowNo{font-size:8px;letter-spacing:.13em;color:var(--blue);font-weight:900}.flowCard h3{font-size:17px;letter-spacing:-.025em;margin:10px 0 8px}.flowCard p{font-size:11px;color:#667085;line-height:1.58;margin:0;max-width:460px}
+    .flowTrail{position:absolute;left:22px;bottom:20px;right:22px;height:2px;background:#edf0f4}.flowTrail i{position:absolute;width:44%;height:2px;left:0;top:0;background:var(--blue)}
+    .manifesto{background:var(--navy);color:#fff;padding:72px 0}.manifestoInner{display:grid;grid-template-columns:1fr .8fr;gap:55px;align-items:end}.manifesto h2{max-width:760px;margin:9px 0 0}.manifesto p{color:#b9c8da;font-size:12px;line-height:1.65;margin:0;max-width:450px}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}.principle{padding:16px;border:1px solid rgba(255,255,255,.1);border-radius:11px;background:rgba(255,255,255,.035)}.principle strong{display:block;font-size:11px}.principle span{display:block;margin-top:5px;color:#96aac5;font-size:9px;line-height:1.5}
+    .contact{padding:94px 0}.contactGrid{display:grid;grid-template-columns:1fr .88fr;gap:40px;align-items:start}
+    .contactCopy h2{max-width:670px}.contactCopy p{font-size:14px;line-height:1.7;color:var(--muted);max-width:590px}
+    .form{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:24px}.form h3{margin:0;font-size:17px;letter-spacing:-.02em}.formSub{font-size:9px;color:#7d8795;margin:5px 0 0}
+    form{margin-top:17px}.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    label{display:grid;gap:6px;color:#667085;font-size:8px;letter-spacing:.08em;text-transform:uppercase;font-weight:900}
+    input,select,textarea{width:100%;border:1px solid #d8e0ea;border-radius:9px;background:#fff;color:var(--ink);outline:none;padding:11px 12px;font-size:11px}
+    textarea{min-height:92px;resize:vertical}.full{grid-column:1/-1}
+    input:focus,select:focus,textarea:focus{border-color:#90b6ff;box-shadow:0 0 0 3px rgba(11,92,255,.08)}
+    .formBottom{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:13px}.finePrint{color:#98a2b3;font-size:8px;line-height:1.45;max-width:220px}
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin-top:32px}.faqItem{padding:20px 0;border-top:1px solid var(--line)}.faqItem h3{font-size:13px;margin:0 0 8px}.faqItem p{font-size:10px;color:#667085;line-height:1.62;margin:0}
+    .bottom{background:var(--blue);color:#fff;padding:68px 0}.bottomRow{display:flex;justify-content:space-between;gap:30px;align-items:end}.bottom h2{margin:0;max-width:760px}.bottom p{color:#dce8ff;font-size:12px;line-height:1.55;max-width:620px;margin:12px 0 0}
+    .footer{background:#061225;color:#95a7bc}.footerRow{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:9px}.footerBrand{color:#fff;font-weight:850}.footerMeta{color:#6f8298}
+    @media(max-width:980px){.navLinks{display:none}.heroRow{grid-template-columns:1fr;gap:42px}.console{max-width:720px}.introAside{display:none}.teamLayout,.contactGrid{grid-template-columns:1fr}.workflowCopy{position:static}.detailQuote{text-align:left}.manifestoInner{grid-template-columns:1fr}.principles{grid-template-columns:1fr 1fr}}
     @media(max-width:650px){
-      .container{width:min(100% - 28px,1160px)}.navInner{height:66px}.brandMeta,.navCta .secondary{display:none}
-      h1{font-size:43px}.heroCopy{font-size:15px}.heroActions{flex-direction:column}.heroActions .btn{width:100%}
-      .stripInner{grid-template-columns:1fr 1fr}.stripItem:nth-child(2){border-right:0}.stripItem:nth-child(-n+2){border-bottom:1px solid var(--line)}.stripItem:nth-child(4){border-right:0}
-      .boardGrid{grid-template-columns:1fr 1fr}.agents{grid-template-columns:1fr}.section,.cta{padding:68px 0}
-      .proofGrid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.full{grid-column:auto}.formBottom{flex-direction:column;align-items:stretch}.formNote{max-width:none}
-      .faqGrid{grid-template-columns:1fr}.bottomInner{flex-direction:column;align-items:flex-start}.footerInner{flex-direction:column;align-items:flex-start}
+      .wrap{width:min(100% - 28px,1180px)}.navRow{height:65px}.brandMeta,.navActions .outline{display:none}
+      .heroRow{padding:58px 0 56px}.heroText{font-size:15px}h1{font-size:44px}.heroActions{flex-direction:column}.heroActions .btn{width:100%}
+      .signalRow{grid-template-columns:1fr 1fr}.signal{padding:15px}.signal:nth-child(2){border-right:0}.signal:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .section,.contact{padding:68px 0}.teamLayout{margin-top:28px}.detailTop{padding:22px}.detailGrid{grid-template-columns:1fr}.detailPane{padding:21px 22px}.detailPane + .detailPane{border-left:0;border-top:1px solid var(--line)}.detailQuote{max-width:none;margin-top:10px}
+      .flow{grid-template-columns:1fr}.principles{grid-template-columns:1fr}.faq{grid-template-columns:1fr}.formGrid{grid-template-columns:1fr}.full{grid-column:auto}.formBottom{flex-direction:column;align-items:stretch}.finePrint{max-width:none}.bottomRow{flex-direction:column;align-items:flex-start}.footerRow{height:auto;padding:24px 0;align-items:flex-start;flex-direction:column}
     }
   </style>
 </head>
 <body>
   <header class="nav">
-    <div class="container navInner">
+    <div class="wrap navRow">
       <a class="brand" href="#">
-        <span class="mark">G</span>
-        <span><span class="brandName">GrowStackUp</span><span class="brandMeta">AI workforce for business</span></span>
+        <span class="logo">G</span>
+        <span><span class="brandText">GrowStackUp</span><span class="brandMeta">Workforce, redesigned</span></span>
       </a>
-      <nav class="navLinks" aria-label="Primary">
-        <a href="#agents">The team</a>
-        <a href="#workflow">How they work</a>
-        <a href="#built">Built around your business</a>
+      <nav class="navLinks">
+        <a href="#team">Employees</a>
+        <a href="#how">How it works</a>
+        <a href="#built">The thinking</a>
         <a href="#contact">Talk to us</a>
       </nav>
-      <div class="navCta">
-        <a class="btn secondary" href="#agents">Meet the team</a>
-        <a class="btn primary" href="#contact">Build my workforce →</a>
+      <div class="navActions">
+        <a class="btn outline" href="#team">Meet the team</a>
+        <a class="btn primary" href="#contact">Design an employee →</a>
       </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container heroInner">
+      <div class="wrap heroRow">
         <div>
-          <div class="eyebrow">A different kind of team</div>
-          <h1>Give every repetitive job its own employee.</h1>
-          <p class="heroCopy">GrowStackUp builds specialized AI employees for the work your business repeats every day — sales development, research, follow-up, documents, finance, operations, support and voice.</p>
+          <div class="eyebrow">GrowStackUp / AI workforce</div>
+          <h1>Not every job needs another person.</h1>
+          <p class="heroText">Some jobs just need someone to own them. We build specialized AI employees that research, call, chase, check, reconcile and move work through the systems your business already uses.</p>
           <div class="heroActions">
-            <a class="btn primary" href="#contact">Build your AI workforce <span>→</span></a>
-            <a class="btn secondary" href="#agents">Meet the 8 employees</a>
+            <a class="btn primary" href="#contact">Design my first employee <span>→</span></a>
+            <a class="btn ghost" href="#team">See who we built</a>
           </div>
-          <div class="heroNote">
-            <span><i class="dot"></i>One employee. One clear job.</span>
-            <span><i class="dot"></i>Defined workflow + personality.</span>
-            <span><i class="dot"></i>Human oversight where it matters.</span>
+          <div class="heroFine">
+            <span><i class="tinyDot"></i>One role at a time</span>
+            <span><i class="tinyDot"></i>Rules before prompts</span>
+            <span><i class="tinyDot"></i>Human approval where it matters</span>
           </div>
         </div>
 
-        <div class="teamBoard" aria-label="Example AI team dashboard">
-          <div class="boardTop"><div class="boardTitle">GrowStackUp / Your AI team</div><div class="boardStatus">8 roles defined</div></div>
-          <div class="boardGrid">
-            <div class="miniAgent"><div class="miniTop"><div><strong>Scout</strong><span>SDR</span></div><div class="avatar">SC</div></div><div class="miniState">Researching accounts → drafting outreach</div></div>
-            <div class="miniAgent"><div class="miniTop"><div><strong>Trace</strong><span>Documents</span></div><div class="avatar">TR</div></div><div class="miniState">Reading files → checking required fields</div></div>
-            <div class="miniAgent"><div class="miniTop"><div><strong>Ledger</strong><span>Finance</span></div><div class="avatar">LE</div></div><div class="miniState">Matching invoices → flagging exceptions</div></div>
-            <div class="miniAgent"><div class="miniTop"><div><strong>Voice</strong><span>Calls</span></div><div class="avatar">VO</div></div><div class="miniState">Qualifying inbound → booking meetings</div></div>
+        <div class="console" aria-label="Illustrative AI workforce console">
+          <div class="consoleHead">
+            <div class="windowDots"><i></i><i></i><i></i></div>
+            <div class="consoleTitle">Today / Work in motion</div>
+            <div class="consoleStatus">● active</div>
           </div>
-          <div class="boardFoot">The point is not another chat window. Each employee owns a recurring workflow, follows its rules and hands work to the next employee when needed.</div>
+          <div class="consoleBody">
+            <div class="queue">
+              <div class="job"><div class="jobAvatar">SC</div><div><strong>Scout</strong><span>48 accounts researched · 12 ready for outreach</span></div><div class="jobState">working</div></div>
+              <div class="job"><div class="jobAvatar">TR</div><div><strong>Trace</strong><span>31 documents checked · 4 missing fields flagged</span></div><div class="jobState">working</div></div>
+              <div class="job"><div class="jobAvatar">LE</div><div><strong>Ledger</strong><span>19 invoices matched · 2 exceptions escalated</span></div><div class="jobState">working</div></div>
+              <div class="job"><div class="jobAvatar">VO</div><div><strong>Voice</strong><span>6 calls completed · 2 meetings booked</span></div><div class="jobState">ready</div></div>
+            </div>
+            <div class="consoleDivider"></div>
+            <div class="activityLabel">Recent handoffs</div>
+            <div class="activity">
+              <div class="activityRow"><span><b>Scout</b> → Follow · qualified account</span><em>09:41</em></div>
+              <div class="activityRow"><span><b>Trace</b> → Ledger · clean document set</span><em>09:37</em></div>
+              <div class="activityRow"><span><b>Ledger</b> → human · invoice exception</span><em>09:29</em></div>
+            </div>
+          </div>
+          <div class="consoleFoot">Illustrative workflow view. Actual tasks, systems and approval rules are configured around each customer's process.</div>
         </div>
       </div>
     </section>
 
-    <section class="strip">
-      <div class="container stripInner">
-        <div class="stripItem"><span class="stripKicker">Designed for</span><span class="stripValue">Revenue + operations</span><span class="stripSub">The work behind growth.</span></div>
-        <div class="stripItem"><span class="stripKicker">Each employee</span><span class="stripValue">Role + rules + tone</span><span class="stripSub">Not a generic chatbot.</span></div>
-        <div class="stripItem"><span class="stripKicker">Works with</span><span class="stripValue">Your existing stack</span><span class="stripSub">CRM, inbox, docs and data.</span></div>
-        <div class="stripItem"><span class="stripKicker">Built around</span><span class="stripValue">Real workflows</span><span class="stripSub">Not AI demos.</span></div>
+    <section class="signalBar">
+      <div class="wrap signalRow">
+        <div class="signal"><span class="signalLabel">The idea</span><span class="signalMain">Give work an owner</span><span class="signalSub">Not another empty inbox.</span></div>
+        <div class="signal"><span class="signalLabel">The unit</span><span class="signalMain">A job, not a chatbot</span><span class="signalSub">Clear responsibility.</span></div>
+        <div class="signal"><span class="signalLabel">The stack</span><span class="signalMain">Use what you have</span><span class="signalSub">CRM, email, files, finance, phone.</span></div>
+        <div class="signal"><span class="signalLabel">The model</span><span class="signalMain">Start small. Earn the next hire.</span><span class="signalSub">One workflow → a team.</span></div>
       </div>
     </section>
 
-    <section class="section" id="agents">
-      <div class="container">
-        <div class="agentsHead">
-          <div class="agentsIntro">
-            <div class="label">Meet the team</div>
-            <h2>Eight employees. Eight jobs. One operating system.</h2>
-            <p class="lead">Each agent has a specific responsibility, a working style and a defined handoff. You decide where humans stay in the loop.</p>
+    <section class="section" id="team">
+      <div class="wrap">
+        <div class="intro">
+          <div>
+            <div class="sectionKicker">The team</div>
+            <h2>Eight roles we can put to work.</h2>
+            <p class="lead">Each employee is designed around a real recurring job. Different temperament. Different tools. Different handoffs.</p>
           </div>
-          <div class="agentsNote">The names are the working identities of the agents — not separate SaaS products.</div>
+          <div class="introAside">The interface below is a concept of the workforce model — not a claim that every role is already deployed.</div>
         </div>
 
-        <div class="agents">
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">SC</div><div class="agentRole">01 · Sales Development</div></div>
-            <h3>Scout</h3><div class="personality">The hunter · curious, sharp, persistent</div>
-            <p>Finds target accounts, researches decision-makers, qualifies fit and prepares personalized first-touch outreach.</p>
-            <div class="agentFoot"><span class="tag">Prospecting</span><span class="tag">Research</span><span class="tag">Outreach</span></div>
-            <div class="quote"><strong>Owns:</strong> the top of your pipeline.</div>
-          </article>
+        <div class="teamLayout">
+          <div class="agentNav" role="tablist" aria-label="AI employees">
+            <button class="agentBtn active" data-agent="0" role="tab" aria-selected="true"><div class="agentIcon">SC</div><div><strong>Scout</strong><span>Sales development</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="1" role="tab" aria-selected="false"><div class="agentIcon">TR</div><div><strong>Trace</strong><span>Documents & data</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="2" role="tab" aria-selected="false"><div class="agentIcon">LE</div><div><strong>Ledger</strong><span>Finance & billing</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="3" role="tab" aria-selected="false"><div class="agentIcon">RT</div><div><strong>Route</strong><span>Operations</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="4" role="tab" aria-selected="false"><div class="agentIcon">FO</div><div><strong>Follow</strong><span>Pipeline & recovery</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="5" role="tab" aria-selected="false"><div class="agentIcon">SA</div><div><strong>Sage</strong><span>Customer support</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="6" role="tab" aria-selected="false"><div class="agentIcon">QU</div><div><strong>Quinn</strong><span>Talent & recruiting</span></div><div class="agentArrow">↗</div></button>
+            <button class="agentBtn" data-agent="7" role="tab" aria-selected="false"><div class="agentIcon">VO</div><div><strong>Voice</strong><span>Calls & scheduling</span></div><div class="agentArrow">↗</div></button>
+          </div>
 
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">TR</div><div class="agentRole">02 · Documents</div></div>
-            <h3>Trace</h3><div class="personality">The meticulous one · patient, exact, unforgiving</div>
-            <p>Reads PDFs, forms and attachments, extracts information, checks completeness and routes exceptions to the right person.</p>
-            <div class="agentFoot"><span class="tag">PDFs</span><span class="tag">Data capture</span><span class="tag">Validation</span></div>
-            <div class="quote"><strong>Owns:</strong> the information hidden in your files.</div>
-          </article>
-
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">LE</div><div class="agentRole">03 · Finance</div></div>
-            <h3>Ledger</h3><div class="personality">The numbers person · calm, skeptical, precise</div>
-            <p>Handles invoice checks, reconciliations, exceptions and routine finance follow-up while escalating anything that needs judgment.</p>
-            <div class="agentFoot"><span class="tag">AP / AR</span><span class="tag">Reconciliation</span><span class="tag">Exceptions</span></div>
-            <div class="quote"><strong>Owns:</strong> the repetitive layer around money.</div>
-          </article>
-
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">RT</div><div class="agentRole">04 · Operations</div></div>
-            <h3>Route</h3><div class="personality">The operator · structured, decisive, unflappable</div>
-            <p>Keeps work moving: tasks, handoffs, status checks, missing information and operational exceptions across teams.</p>
-            <div class="agentFoot"><span class="tag">Coordination</span><span class="tag">Exceptions</span><span class="tag">Handoffs</span></div>
-            <div class="quote"><strong>Owns:</strong> the space between departments.</div>
-          </article>
-
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">FO</div><div class="agentRole">05 · Follow-up</div></div>
-            <h3>Follow</h3><div class="personality">The finisher · persistent, tactful, organized</div>
-            <p>Chases the work that quietly goes cold: quotes, approvals, renewals, outstanding replies and next steps.</p>
-            <div class="agentFoot"><span class="tag">Follow-ups</span><span class="tag">Pipeline</span><span class="tag">Recovery</span></div>
-            <div class="quote"><strong>Owns:</strong> what your team keeps meaning to follow up on.</div>
-          </article>
-
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">CS</div><div class="agentRole">06 · Customer Support</div></div>
-            <h3>Sage</h3><div class="personality">The calm one · warm, clear, composed</div>
-            <p>Handles repetitive customer requests, triage, status questions and routine responses without losing context.</p>
-            <div class="agentFoot"><span class="tag">Inbox</span><span class="tag">Triage</span><span class="tag">Customer updates</span></div>
-            <div class="quote"><strong>Owns:</strong> the questions your team answers every day.</div>
-          </article>
-
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">TA</div><div class="agentRole">07 · Talent</div></div>
-            <h3>Talent</h3><div class="personality">The recruiter · attentive, selective, human</div>
-            <p>Finds candidates, organizes screening information, coordinates scheduling and keeps recruiting workflows moving.</p>
-            <div class="agentFoot"><span class="tag">Sourcing</span><span class="tag">Screening</span><span class="tag">Scheduling</span></div>
-            <div class="quote"><strong>Owns:</strong> the repetitive coordination around hiring.</div>
-          </article>
-
-          <article class="agentCard">
-            <div class="agentHead"><div class="agentAvatar">VO</div><div class="agentRole">08 · Voice</div></div>
-            <h3>Voice</h3><div class="personality">The closer · confident, concise, always available</div>
-            <p>Handles inbound and outbound calls for qualification, scheduling, status collection and routine conversations.</p>
-            <div class="agentFoot"><span class="tag">Inbound</span><span class="tag">Outbound</span><span class="tag">Scheduling</span></div>
-            <div class="quote"><strong>Owns:</strong> phone work that does not need a human every minute.</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft" id="workflow">
-      <div class="container workflow">
-        <div class="workflowCopy">
-          <div class="label">How the team works</div>
-          <h2>They do not just answer questions. They move work.</h2>
-          <p class="lead">The value comes from the handoffs. One employee can research, another can act, another can verify — with people stepping in where judgment is required.</p>
-          <div class="sectionCta"><a class="btn primary" href="#contact">Design a workflow →</a></div>
-        </div>
-        <div class="workflowList">
-          <div class="flowItem"><div class="flowNum">01</div><div><h3>Scout finds the opportunity</h3><p>Account research, qualification and first-touch preparation.</p></div><div class="arrow">→</div></div>
-          <div class="flowItem"><div class="flowNum">02</div><div><h3>Follow keeps the conversation alive</h3><p>Structured follow-up based on response, stage and timing.</p></div><div class="arrow">→</div></div>
-          <div class="flowItem"><div class="flowNum">03</div><div><h3>Trace reads the paperwork</h3><p>Documents are extracted, checked and routed instead of sitting in an inbox.</p></div><div class="arrow">→</div></div>
-          <div class="flowItem"><div class="flowNum">04</div><div><h3>Ledger verifies the numbers</h3><p>Invoices, records and exceptions are reconciled against your rules.</p></div><div class="arrow">→</div></div>
-          <div class="flowItem"><div class="flowNum">05</div><div><h3>Route keeps operations moving</h3><p>Tasks and exceptions are pushed to the right owner before they stall.</p></div><div class="arrow">→</div></div>
-          <div class="flowItem"><div class="flowNum">06</div><div><h3>Voice + Sage handle the routine conversations</h3><p>Calls, updates and repetitive customer requests continue without waiting for office hours.</p></div><div class="arrow">→</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="built">
-      <div class="container">
-        <div class="proofPanel">
-          <div class="eyebrow">Built around the work</div>
-          <h3>Your employees should feel like specialists — because they are.</h3>
-          <p>We do not start by handing you a generic chatbot. We map the job, define the rules, connect the systems and shape the agent around the way your company actually operates.</p>
-          <div class="proofGrid">
-            <div class="proofBox"><strong>Role</strong><span>What this employee owns and where its responsibility starts and ends.</span></div>
-            <div class="proofBox"><strong>Personality</strong><span>How it communicates with customers, prospects and your team.</span></div>
-            <div class="proofBox"><strong>Workflow</strong><span>What it reads, decides, executes, records and hands off.</span></div>
+          <div class="agentDetail" id="agentDetail" role="tabpanel">
+            <div class="detailTop">
+              <div class="detailIdentity">
+                <div class="detailIcon" id="detailIcon">SC</div>
+                <div><div class="detailRole" id="detailRole">Sales development</div><div class="detailName" id="detailName">Scout</div><div class="detailTag" id="detailTag">The hunter · curious, sharp, persistent</div></div>
+              </div>
+              <div class="detailQuote" id="detailQuote">“Give me a market, a target and a reason to care. I’ll find the people worth talking to.”</div>
+            </div>
+            <div class="detailGrid">
+              <div class="detailPane">
+                <div class="miniLabel">What Scout owns</div>
+                <h3 id="detailHeadline">The top of your pipeline.</h3>
+                <p id="detailBody">Scout researches target accounts, finds the right people, qualifies fit and prepares outreach that reflects what is actually happening inside the company.</p>
+                <div class="list" id="detailList">
+                  <div class="listRow"><span class="check">✓</span><span>Build account and decision-maker research</span></div>
+                  <div class="listRow"><span class="check">✓</span><span>Score fit against your ICP and rules</span></div>
+                  <div class="listRow"><span class="check">✓</span><span>Draft personalized first-touch outreach</span></div>
+                </div>
+              </div>
+              <div class="detailPane">
+                <div class="miniLabel">Working style</div>
+                <h3 id="detailStyle">Fast to investigate. Slow to assume.</h3>
+                <p id="detailStyleBody">Scout keeps uncertainty visible instead of inventing confidence.</p>
+                <div class="pillRow" id="detailPills"><span class="pill">Research</span><span class="pill">Qualification</span><span class="pill">Outreach</span></div>
+                <div class="handoff" id="detailHandoff"><b>Hands off to:</b> Follow when an account is ready for a sequence.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta" id="contact">
-      <div class="container ctaPanel">
+    <section class="section paper" id="how">
+      <div class="wrap">
+        <div class="sectionKicker">The difference</div>
+        <h2>A job has a beginning, a middle and an end.</h2>
+        <p class="lead">That is how we design each employee. Not around a prompt box — around the full piece of work someone is currently doing by hand.</p>
+        <div class="flow">
+          <article class="flowCard"><div class="flowNo">01 / DEFINE</div><h3>Start with the job.</h3><p>What comes in? What decisions are allowed? What counts as done? Where does a human need to approve?</p><div class="flowTrail"><i></i></div></article>
+          <article class="flowCard"><div class="flowNo">02 / CONNECT</div><h3>Give the employee the right context.</h3><p>Its systems, documents, data, rules and communication style — enough to do useful work without guessing.</p><div class="flowTrail"><i style="width:68%"></i></div></article>
+          <article class="flowCard"><div class="flowNo">03 / EXECUTE</div><h3>Let it move the work.</h3><p>Read, decide, send, update, call, reconcile or route — with evidence and clear escalation when something falls outside the rules.</p><div class="flowTrail"><i style="width:84%"></i></div></article>
+          <article class="flowCard"><div class="flowNo">04 / HAND OFF</div><h3>Then pass the baton.</h3><p>A good employee knows when the job belongs to another employee — or to a human being.</p><div class="flowTrail"><i style="width:100%"></i></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" id="built">
+      <div class="wrap manifestoInner">
         <div>
-          <div class="label">Build your team</div>
-          <h2>Tell us the work you are tired of doing manually.</h2>
-          <p>We will map the process first, identify which jobs are repeatable and show you where specialized AI employees can take over execution. No generic demo. No need to replace your existing systems to start the conversation.</p>
-          <div class="heroNote" style="color:#667085;margin-top:22px"><span><i class="dot"></i>Start with one workflow</span><span><i class="dot"></i>Expand to a team</span></div>
+          <div class="eyebrow">The thinking</div>
+          <h2>We are not trying to make one AI that does everything.</h2>
         </div>
-        <div class="formCard">
+        <div>
+          <p>We think the better model is a small team of specialists. Each one owns a job, has a working personality and knows where its responsibility ends.</p>
+          <div class="principles">
+            <div class="principle"><strong>Specific beats clever</strong><span>A narrow job with clear rules is easier to trust and improve.</span></div>
+            <div class="principle"><strong>Evidence beats confidence</strong><span>Show the source, record the action and surface uncertainty.</span></div>
+            <div class="principle"><strong>Handoffs matter</strong><span>The real system is the space between jobs, not just the jobs themselves.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contactGrid">
+        <div class="contactCopy">
+          <div class="sectionKicker">Start with one job</div>
+          <h2>Tell us what your team keeps doing after the real work is already done.</h2>
+          <p>We will map that workflow, decide what can be owned by an AI employee and show you what the first version should actually do. Start with one role. Expand when it earns its place.</p>
+          <div class="heroFine" style="color:#7f8b99"><span><i class="tinyDot"></i>No generic demo</span><span><i class="tinyDot"></i>Workflow first</span><span><i class="tinyDot"></i>Existing systems welcome</span></div>
+        </div>
+        <div class="form">
           <h3>Start the conversation</h3>
-          <p>Give us enough context to understand the workflow.</p>
+          <div class="formSub">A few details help us understand the job before the call.</div>
           <form onsubmit="return openBooking(event)">
-            <div class="grid">
+            <div class="formGrid">
               <label>Company<input name="company" placeholder="Company name" autocomplete="organization" required></label>
               <label>Work email<input name="email" type="email" placeholder="you@company.com" autocomplete="email" required></label>
-              <label>Team / role<input name="role" placeholder="Your role"></label>
-              <label>Biggest repetitive workflow<select name="workflow" required><option value="" selected disabled>Choose one</option><option>Sales / prospecting</option><option>Follow-up / pipeline</option><option>Documents / data entry</option><option>Finance / billing</option><option>Operations / coordination</option><option>Customer support</option><option>Recruiting</option><option>Calls / scheduling</option><option>Something else</option></select></label>
-              <label class="full">What is currently manual?<textarea name="problem" placeholder="Describe the job, the systems involved and where it gets stuck." required></textarea></label>
+              <label>Your role<input name="role" placeholder="CEO, COO, VP Sales..."></label>
+              <label>Where is the work?<select name="area" required><option value="" selected disabled>Choose an area</option><option>Sales</option><option>Follow-up</option><option>Documents</option><option>Finance</option><option>Operations</option><option>Customer support</option><option>Recruiting</option><option>Phone / scheduling</option><option>Other</option></select></label>
+              <label class="full">What is the job?<textarea name="workflow" placeholder="What does someone on your team repeatedly do by hand?" required></textarea></label>
             </div>
             <div class="formBottom">
-              <span class="formNote">The form currently opens the existing 15-minute booking flow. CRM capture and workflow intake can be connected next.</span>
+              <span class="finePrint">The form currently opens the existing 15-minute booking flow. CRM intake can be connected before paid traffic.</span>
               <button class="btn primary" type="submit">Book a workflow call →</button>
             </div>
           </form>
@@ -342,42 +312,68 @@
     </section>
 
     <section class="section" id="faq">
-      <div class="container">
-        <div class="label">FAQ</div>
-        <h2>Start narrow. Build the team from there.</h2>
-        <div class="faqGrid">
-          <article class="faqItem"><h3>Are these generic chatbots?</h3><p>No. The model is to give each employee a defined job, tools, rules, workflow and handoff rather than one assistant that tries to do everything.</p></article>
-          <article class="faqItem"><h3>Do we need to replace our existing software?</h3><p>Not necessarily. The intended workflow is to connect the systems you already use and automate the repetitive layer around them.</p></article>
-          <article class="faqItem"><h3>Can we start with just one employee?</h3><p>Yes. A single workflow can be mapped first, then additional employees can be added where the handoffs make sense.</p></article>
-          <article class="faqItem"><h3>Are humans still involved?</h3><p>Yes. The system can be designed around approval points, exceptions and escalation so people remain responsible for decisions that require judgment.</p></article>
+      <div class="wrap">
+        <div class="sectionKicker">FAQ</div>
+        <h2>The useful questions.</h2>
+        <div class="faq">
+          <article class="faqItem"><h3>Is this just a chatbot with a name?</h3><p>No. The intended design is a defined job: inputs, rules, tools, actions, records, approvals and a clear handoff.</p></article>
+          <article class="faqItem"><h3>Do we have to replace our software?</h3><p>No. The goal is to work around the systems you already use and automate the repetitive work between them.</p></article>
+          <article class="faqItem"><h3>Do all eight employees have to be built at once?</h3><p>No. Start with one workflow. The rest are added when there is a real job for them to own.</p></article>
+          <article class="faqItem"><h3>Where do humans stay involved?</h3><p>Where judgment, approval, sensitive communication or exceptions require a person. The employee should make that handoff obvious.</p></article>
         </div>
       </div>
     </section>
 
     <section class="bottom">
-      <div class="container bottomInner">
+      <div class="wrap bottomRow">
         <div>
-          <h2>Do not add another dashboard. Add the employee that owns the job.</h2>
-          <p>Tell us which workflow is consuming the most repetitive human time, and we will start there.</p>
+          <h2>Give the work an owner.</h2>
+          <p>Show us the repetitive job that keeps stealing time from the people you actually hired.</p>
         </div>
-        <a class="btn secondary" href="#contact" style="white-space:nowrap">Build the team →</a>
+        <a class="btn outline" href="#contact">Design the first employee →</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footerInner">
+    <div class="wrap footerRow">
       <div><span class="footerBrand">GrowStackUp</span> · AI workforce for business</div>
-      <div class="footerNote">© 2026 GrowStackUp. Specialized agents. Real workflows.</div>
+      <div class="footerMeta">© 2026 GrowStackUp</div>
     </div>
   </footer>
 
   <script>
-    function openBooking(event){
-      event.preventDefault();
-      window.open("https://calendly.com/growstackup/15min","_blank","noopener,noreferrer");
-      return false;
+    const agents = [
+      {n:"Scout",i:"SC",role:"Sales development",tag:"The hunter · curious, sharp, persistent",quote:"“Give me a market, a target and a reason to care. I’ll find the people worth talking to.”",headline:"The top of your pipeline.",body:"Scout researches target accounts, finds the right people, qualifies fit and prepares outreach that reflects what is actually happening inside the company.",style:"Fast to investigate. Slow to assume.",styleBody:"Scout keeps uncertainty visible instead of inventing confidence.",pills:["Research","Qualification","Outreach"],handoff:"Follow when an account is ready for a sequence.",items:["Build account and decision-maker research","Score fit against your ICP and rules","Draft personalized first-touch outreach"]},
+      {n:"Trace",i:"TR",role:"Documents & data",tag:"The meticulous one · patient, exact, unforgiving",quote:"“Send me the files. I’ll tell you what’s there, what’s missing and what needs a human.”",headline:"The information trapped in your files.",body:"Trace reads PDFs, forms, spreadsheets and attachments, extracts the useful fields, checks completeness and routes anything that does not fit the rules.",style:"Methodical by default.",styleBody:"Trace values source evidence and explicit exceptions over fast guesses.",pills:["PDFs","Extraction","Validation"],handoff:"Ledger or Route when a document is ready for the next step.",items:["Extract structured fields from documents","Check completeness against a checklist","Flag missing or contradictory information"]},
+      {n:"Ledger",i:"LE",role:"Finance & billing",tag:"The numbers person · calm, skeptical, precise",quote:"“The number is only useful when we know where it came from.”",headline:"The repetitive layer around money.",body:"Ledger handles routine invoice checks, reconciliations and finance follow-up while making exceptions visible before they become someone else’s problem.",style:"Calm under a messy spreadsheet.",styleBody:"Ledger leaves an audit trail and escalates decisions that need judgment.",pills:["AP / AR","Reconciliation","Exceptions"],handoff:"A human owner when an exception needs approval or dispute.",items:["Match records against defined rules","Surface discrepancies and missing information","Prepare routine follow-up and exception queues"]},
+      {n:"Route",i:"RT",role:"Operations",tag:"The operator · structured, decisive, unflappable",quote:"“I don’t need more status meetings. I need the next step to have an owner.”",headline:"The space between departments.",body:"Route keeps tasks moving across teams: missing information, status checks, escalations, handoffs and routine coordination.",style:"Structured when everyone else is busy.",styleBody:"Route cares about ownership, timing and what should happen next.",pills:["Coordination","Exceptions","Handoffs"],handoff:"The next responsible employee or human owner.",items:["Track work that is waiting on someone","Trigger the next step when a condition is met","Escalate stalled or ambiguous tasks"]},
+      {n:"Follow",i:"FO",role:"Pipeline & recovery",tag:"The finisher · persistent, tactful, organized",quote:"“I keep the things you meant to get back to from quietly disappearing.”",headline:"The work that goes cold after interest.",body:"Follow manages structured follow-up for quotes, approvals, renewals, replies and other opportunities that need a timely next step.",style:"Persistent without being annoying.",styleBody:"Follow works from context, timing and rules instead of blasting the same message.",pills:["Follow-up","Recovery","Timing"],handoff:"Scout for new opportunities or a human for high-value conversations.",items:["Identify stalled conversations and tasks","Choose the next touch based on context","Record replies and move the workflow forward"]},
+      {n:"Sage",i:"SA",role:"Customer support",tag:"The calm one · warm, clear, composed",quote:"“People do not want a clever answer. They want a useful one.”",headline:"The questions your team answers every day.",body:"Sage handles repeat customer questions, triage, status requests and routine updates while preserving the context needed for a human handoff.",style:"Warm without wasting words.",styleBody:"Sage knows when an issue is routine and when it should leave the script.",pills:["Inbox","Triage","Updates"],handoff:"A human support owner for exceptions or sensitive cases.",items:["Classify and route incoming requests","Answer routine questions from approved sources","Prepare clear escalation notes"]},
+      {n:"Quinn",i:"QU",role:"Talent & recruiting",tag:"The recruiter · attentive, selective, human",quote:"“I’ll keep the pipeline moving without turning candidates into ticket numbers.”",headline:"The repetitive coordination around hiring.",body:"Quinn helps source candidates, organize screening information, coordinate interviews and keep hiring tasks moving.",style:"Selective, organized and candidate-aware.",styleBody:"Quinn keeps humans close to decisions that affect people.",pills:["Sourcing","Screening","Scheduling"],handoff:"A hiring manager for evaluation and decisions.",items:["Organize candidate and role information","Coordinate screening and scheduling","Keep hiring tasks and follow-ups current"]},
+      {n:"Voice",i:"VO",role:"Calls & scheduling",tag:"The closer · confident, concise, always available",quote:"“Pick up the phone. Find out what is true. Book the next step.”",headline:"The phone work that does not need a person every minute.",body:"Voice handles routine inbound and outbound calls for qualification, scheduling, status collection and simple follow-ups, with escalation when the conversation goes off-script.",style:"Direct, polite and hard to rattle.",styleBody:"Voice follows the playbook and gets out of the way when a human should take over.",pills:["Inbound","Outbound","Scheduling"],handoff:"A human rep whenever the conversation needs judgment or negotiation.",items:["Qualify inbound calls against your rules","Schedule and confirm appointments","Collect routine status information"]},
+    ];
+
+    const detail = {
+      icon:document.getElementById("detailIcon"),role:document.getElementById("detailRole"),name:document.getElementById("detailName"),
+      tag:document.getElementById("detailTag"),quote:document.getElementById("detailQuote"),headline:document.getElementById("detailHeadline"),
+      body:document.getElementById("detailBody"),style:document.getElementById("detailStyle"),styleBody:document.getElementById("detailStyleBody"),
+      pills:document.getElementById("detailPills"),handoff:document.getElementById("detailHandoff"),list:document.getElementById("detailList")
+    };
+    function renderAgent(idx){
+      const a=agents[idx];
+      detail.icon.textContent=a.i; detail.role.textContent=a.role; detail.name.textContent=a.n; detail.tag.textContent=a.tag;
+      detail.quote.textContent=a.quote; detail.headline.textContent=a.headline; detail.body.textContent=a.body;
+      detail.style.textContent=a.style; detail.styleBody.textContent=a.styleBody;
+      detail.pills.innerHTML=a.pills.map(p=>"<span class=\"pill\">"+p+"</span>").join("");
+      detail.handoff.innerHTML="<b>Hands off to:</b> "+a.handoff;
+      detail.list.innerHTML=a.items.map(item=>"<div class=\"listRow\"><span class=\"check\">✓</span><span>"+item+"</span></div>").join("");
+      document.querySelectorAll(".agentBtn").forEach((b,i)=>{
+        const active=i===idx;b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active));
+      });
     }
+    document.querySelectorAll(".agentBtn").forEach(btn=>btn.addEventListener("click",()=>renderAgent(Number(btn.dataset.agent))));
+    function openBooking(event){event.preventDefault();window.open("https://calendly.com/growstackup/15min","_blank","noopener,noreferrer");return false}
   </script>
 </body>
 </html>
